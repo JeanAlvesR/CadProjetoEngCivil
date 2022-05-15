@@ -111,7 +111,7 @@ public class Projeto {
         return "Projeto{" +
                 "codigoId=" + codigoId +
                 ", nome='" + nome + '\'' +
-                ", gastoFuncionarios=" + gastoFuncionarios +
+                ", gastoFuncionarios=" + getGastoFuncionarios() +
                 ", dataInicial=" + dataInicial +
                 ", dataFinal=" + dataFinal +
                 ", projetoStatus=" + projetoStatus +
