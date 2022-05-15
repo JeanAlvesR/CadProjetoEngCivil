@@ -1,22 +1,23 @@
 package Entidades;
 
 import java.util.Objects;
-public class FuncGerais implements Funcionario{
+
+public class Engenheiro implements Funcionario{
 
     private String name;
-    private String cpf;
+    private String crea;
     private Double horaTrabalhada;
-    private final Double valorHora = 15.0;
+    private final Double valorHora = 25.0;
 
-    public FuncGerais(){
+    public Engenheiro(){
         name = "";
-        cpf = "";
+        crea = "";
         horaTrabalhada = 0.0;
     }
 
-    public FuncGerais(String name, String cpf, Double horaTrabalhada) {
+    public Engenheiro(String name, String crea, Double horaTrabalhada) {
         this.name = name;
-        setCpf(cpf);
+        setCrea(crea);
         this.horaTrabalhada = horaTrabalhada;
     }
 
@@ -32,15 +33,15 @@ public class FuncGerais implements Funcionario{
         this.name = name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCrea() {
+        return crea;
     }
 
-    public void setCpf(String cpf) {
-        cpf = cpf.replace(" ", "");
-        cpf = cpf.replace("-","");
-        cpf = cpf.replace(".","");
-        this.cpf = cpf;
+    public void setCrea(String crea) {
+        crea = crea.replace(" ", "");
+        crea = crea.replace("-","");
+        crea = crea.replace(".","");
+        this.crea = crea;
     }
 
     public Double getHoraTrabalhada() {
@@ -57,24 +58,24 @@ public class FuncGerais implements Funcionario{
 
     @Override
     public String toString() {
-        return "FuncGerais{" +
+        return "Engenheiro{" +
                 "name='" + name + '\'' +
-                ", cpf='" + cpf + '\'' +
+                ", crea='" + crea + '\'' +
                 ", horaTrabalhada=" + horaTrabalhada +
                 ", valorHora=" + valorHora +
                 '}';
     }
-//Compara os objetos funcGerais pelo cpf
+//Compara os objetos Engenheiro pelo crea
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FuncGerais that = (FuncGerais) o;
-        return cpf.equals(that.cpf);
+        Engenheiro that = (Engenheiro) o;
+        return crea.equals(that.crea);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpf);
+        return Objects.hash(crea);
     }
 }
