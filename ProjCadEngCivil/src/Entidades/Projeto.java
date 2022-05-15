@@ -2,6 +2,7 @@ package Entidades;
 
 import Entidades.enu.ProjetoStatus;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -108,12 +109,13 @@ public class Projeto {
 
     @Override
     public String toString() {
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
         return "Projeto{" +
                 "codigoId=" + codigoId +
                 ", nome='" + nome + '\'' +
                 ", gastoFuncionarios=" + getGastoFuncionarios() +
-                ", dataInicial=" + dataInicial +
-                ", dataFinal=" + dataFinal +
+                ", dataInicial=" + sdf1.format(dataInicial) +
+                ", dataFinal=" + sdf1.format(dataFinal) +
                 ", projetoStatus=" + projetoStatus +
                 ", detalhesProjeto=" + detalhesProjeto +
                 ", funcionarios=" + funcionarios +
