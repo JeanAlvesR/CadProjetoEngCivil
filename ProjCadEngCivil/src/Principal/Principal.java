@@ -29,7 +29,7 @@ public class Principal {
 
 
 
-/*
+
 
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
         Projeto projeto = new Projeto(1, "Nova Casa", 0.0, (new Date()),sdf1.parse("29/06/2022"),
@@ -42,7 +42,7 @@ public class Principal {
         ));
 
         System.out.println(projeto);
-    */
+
     }
 
 }
