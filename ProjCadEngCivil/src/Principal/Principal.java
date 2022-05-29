@@ -2,6 +2,9 @@ package Principal;
 
 import Entidades.*;
 import Entidades.enums.ProjetoStatus;
+import Servico.Exceptions.CadException;
+import Servico.Exceptions.RemoveException;
+import Servico.ProjServico;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,11 +13,53 @@ import java.util.Date;
 public class Principal {
     public static void main(String[] args) throws ParseException {
 
+        ProjServico ps = new ProjServico();
+        try {
+            Engenheiro eng = new Engenheiro();
+            eng.setCrea("111");
+            ps.cadFuncionario(eng);
+            System.out.println(ps.consultaFuncionario(eng));
+            eng = new Engenheiro();
+            eng.setCrea("222");
+            ps.cadFuncionario(eng);
+            System.out.println(ps.consultaFuncionario(eng));
+            eng = new Engenheiro();
+            eng.setCrea("333");
+            ps.cadFuncionario(eng);
+            System.out.println(ps.consultaFuncionario(eng));
+            Arquiteto arq = new Arquiteto();
+            arq.setCodRegistro("1");
+            ps.cadFuncionario(arq);
+            arq = new Arquiteto();
+            arq.setCodRegistro("2");
+            ps.cadFuncionario(arq);
+        }
+        catch (CadException ce){
+            ce.printStackTrace();
+        }
 
-        servico.ProjServico ps = new servico.ProjServico();
+        System.out.println("DEPOIS DO TRY");
+            Engenheiro engee = new Engenheiro();
+            engee.setCrea("1");
+            Funcionario func = ps.consultaFuncionario(engee);
+            System.out.println(func);
+            Arquiteto arq = new Arquiteto();
+            arq.setCodRegistro("2");
+            func = ps.consultaFuncionario(arq);
+            System.out.println(func);
 
+            System.out.println(ps.funcionarioList());
 
+           try{
+                Engenheiro funcionario = new Engenheiro();
+                funcionario.setCrea("222");
+                ps.removeFuncionario(funcionario);
+            }
+           catch (RemoveException re){
+               re.printStackTrace();
+           }
 
+        System.out.println(ps.funcionarioList());
 /*
 >>>>>>> parent of cc2f4b0... Troca de laço por expressão Lambda no método getGastoFuncionarios
 

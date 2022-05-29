@@ -58,7 +58,7 @@ public class Arquiteto implements Funcionario{
 
     @Override
     public String toString() {
-        return "Engenheiro{" +
+        return "Arquiteto{" +
                 "name='" + name + '\'' +
                 ", codRegistro='" + codRegistro + '\'' +
                 ", horaTrabalhada=" + horaTrabalhada +

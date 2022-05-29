@@ -2,6 +2,7 @@ package Servico;
 
 import BD.BdAplicacao;
 import Entidades.Cliente;
+import Entidades.Funcionario;
 import Servico.Exceptions.AtualizaException;
 import Servico.Exceptions.CadException;
 import Servico.Exceptions.RemoveException;
@@ -63,6 +64,60 @@ public class ProjServico {
 
     public List<Cliente> clienteList() {
         return bd.getClientes();
+    }
+
+    //-------------------------------------------------> Funcionarios
+
+    public Funcionario consultaFuncionario(Funcionario funcionario) {
+        List<Funcionario> listAux = null;
+
+        if (bd.getFuncionarios().size() == 0) {
+            return null;
+        }
+
+        for (Funcionario func: bd.getFuncionarios()) {
+            if(func.equals(funcionario)) { //Sobreescrevi o equals na classe engenheiro, funcGerais e Arquiteto para comparar com o crea, codigo e codRegistro respectivamente.
+                return func;
+            }
+        }
+
+        return null;
+
+    }
+
+    public void cadFuncionario(Funcionario funcionario) throws CadException{
+        if(consultaFuncionario(funcionario) == null) {
+            bd.addFuncionario(funcionario);
+        }
+        else{
+            throw new CadException();
+        }
+    }
+
+    public void removeFuncionario(Funcionario funcionario) throws RemoveException{
+        if (consultaFuncionario(funcionario) != null) {
+            bd.getFuncionarios().remove(funcionario);
+        } else {
+            throw new RemoveException();
+        }
+    }
+
+    public void atualizaFuncionario(Funcionario funcionario) throws AtualizaException {
+        boolean aux= true;
+        for(int i = 0; i< bd.getFuncionarios().size(); i++){
+            if(funcionario.equals(bd.getFuncionarios().get(i))){
+                bd.getFuncionarios().set(i, funcionario);
+                aux = false;
+            }
+        }
+
+        if(aux){
+            throw new AtualizaException();
+        }
+    }
+        
+    public List<Funcionario> funcionarioList(){
+        return bd.getFuncionarios();
     }
 
 }
