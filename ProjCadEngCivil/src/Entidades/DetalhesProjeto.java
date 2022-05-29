@@ -8,7 +8,7 @@ public class DetalhesProjeto {
     private float inclinacao;
     private String tipoSolo;
     private float areaTotal;
-    Endereco endereco;
+    private Endereco endereco;
 
     public DetalhesProjeto(){
         comprimento = 0.0f;
