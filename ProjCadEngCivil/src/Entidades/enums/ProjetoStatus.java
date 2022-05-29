@@ -1,4 +1,4 @@
-package Entidades.enu;
+package Entidades.enums;
 
 public enum ProjetoStatus {
         ANALISANDO (1),

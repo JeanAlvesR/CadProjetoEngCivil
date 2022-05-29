@@ -1,6 +1,6 @@
 package Entidades;
 
-import Entidades.enu.ProjetoStatus;
+import Entidades.enums.ProjetoStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,8 +56,14 @@ public class Projeto {
     }
 
     public Double getGastoFuncionarios() {
-        gastoFuncionarios = 0.0;
-        funcionarios.forEach((x)->{gastoFuncionarios+=x.getSalario();});
+
+        if(Objects.nonNull(funcionarios.get(0))){
+            for (Funcionario funcionario: funcionarios
+                 ) {
+                gastoFuncionarios+=funcionario.getSalario();
+            }
+        }
+
         return gastoFuncionarios;
     }
 

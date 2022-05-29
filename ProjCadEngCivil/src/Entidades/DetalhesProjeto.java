@@ -3,23 +3,23 @@ package Entidades;
 import java.util.Objects;
 
 public class DetalhesProjeto {
-    private Double comprimento;
-    private Double largura;
-    private Double inclinacao;
+    private float comprimento;
+    private float largura;
+    private float inclinacao;
     private String tipoSolo;
-    private Double areaTotal;
+    private float areaTotal;
     Endereco endereco;
 
     public DetalhesProjeto(){
-        comprimento = 0.0;
-        largura = 0.0;
-        inclinacao = 0.0;
+        comprimento = 0.0f;
+        largura = 0.0f;
+        inclinacao = 0.0f;
         tipoSolo = "";
-        areaTotal = 0.0;
+        areaTotal = 0.0f;
         endereco = new Endereco();
     }
 
-    public DetalhesProjeto(Double comprimento, Double largura, Double inclinacao, String tipoSolo, Endereco endereco) {
+    public DetalhesProjeto(float comprimento, float largura, float inclinacao, String tipoSolo, Endereco endereco) {
         this.comprimento = comprimento;
         this.largura = largura;
         this.inclinacao = inclinacao;
@@ -28,27 +28,27 @@ public class DetalhesProjeto {
         this.endereco = endereco;
     }
 
-    public Double getComprimento() {
+    public float getComprimento() {
         return comprimento;
     }
 
-    public void setComprimento(Double comprimento) {
+    public void setComprimento(float comprimento) {
         this.comprimento = comprimento;
     }
 
-    public Double getLargura() {
+    public float getLargura() {
         return largura;
     }
 
-    public void setLargura(Double largura) {
+    public void setLargura(float largura) {
         this.largura = largura;
     }
 
-    public Double getInclinacao() {
+    public float getInclinacao() {
         return inclinacao;
     }
 
-    public void setInclinacao(Double inclinacao) {
+    public void setInclinacao(float inclinacao) {
         this.inclinacao = inclinacao;
     }
 
@@ -60,11 +60,11 @@ public class DetalhesProjeto {
         this.tipoSolo = tipoSolo;
     }
 
-    public Double getAreaTotal() {
+    public float getAreaTotal() {
         return areaTotal;
     }
 
-    public void setAreaTotal(Double areaTotal) {
+    public void setAreaTotal(float areaTotal) {
         this.areaTotal = areaTotal;
     }
 

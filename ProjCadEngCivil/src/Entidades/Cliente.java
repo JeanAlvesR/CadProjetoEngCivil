@@ -11,8 +11,6 @@ public class Cliente {
     private String email;
     private String telefone;
 
-    private Endereco endereco;
-
     private List<Projeto> projetos = new ArrayList<>();
 
     public Cliente(){
@@ -20,15 +18,13 @@ public class Cliente {
         cpf = "";
         email = "";
         telefone = "";
-        endereco = new Endereco();
     }
 
-    public Cliente(String nome, String cpf, String email, String telefone, Endereco endereco) {
+    public Cliente(String nome, String cpf, String email, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
-        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -65,15 +61,6 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public List<Projeto> getProjetos() {
         return projetos;
     }
@@ -89,7 +76,6 @@ public class Cliente {
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", endereco=" + endereco +
                 ", projetos=" + projetos +
                 '}';
     }
