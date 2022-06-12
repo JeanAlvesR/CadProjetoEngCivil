@@ -3,6 +3,7 @@ package Servico;
 import BD.BdAplicacao;
 import Entidades.Cliente;
 import Entidades.Funcionario;
+import Entidades.Projeto;
 import Servico.Exceptions.AtualizaException;
 import Servico.Exceptions.CadException;
 import Servico.Exceptions.RemoveException;
@@ -71,7 +72,7 @@ public class ProjServico {
     public Funcionario consultaFuncionario(Funcionario funcionario) {
         List<Funcionario> listAux = null;
 
-        if (bd.getFuncionarios().size() == 0) {
+        if (bd.getFuncionarios().isEmpty()) {
             return null;
         }
 
@@ -120,4 +121,52 @@ public class ProjServico {
         return bd.getFuncionarios();
     }
 
+    public List<Projeto> getProjetosCliente(Cliente cliente){
+        if(consultaCliente(cliente)!= null){
+            return cliente.getProjetos();
+        }
+        return null;
+    }
+    
+    public Projeto getProjetoCliente(Cliente cliente, Projeto projeto){
+    
+        if(consultaCliente(cliente)!= null){
+            List<Projeto> proj = cliente.getProjetos().stream().filter(x -> x.getCodigoId() == projeto.getCodigoId()).collect(Collectors.toList());
+            return proj.get(0);
+        }
+        return null;
+    }
+    
+    public void cadProjeto(Cliente cliente, Projeto projeto) throws CadException{
+        if(consultaCliente(cliente)!= null){
+            cliente.addProjeto(projeto);
+        }
+        else{
+            throw new CadException();
+        }
+    }
+    
+    public void removeProjeto(Cliente cliente, Projeto projeto) throws RemoveException{
+        
+        if(getProjetoCliente(cliente, projeto)!= null){
+            cliente.getProjetos().remove(projeto);
+        }
+        else{
+            throw new RemoveException();
+        }
+    }
+    
+    public void atualizaProjeto(Cliente cliente, Projeto projeto) throws AtualizaException{
+        
+        if(getProjetoCliente(cliente, projeto)!= null){
+            for(int i = 0; i < cliente.getProjetos().size(); i++){
+                if(cliente.getProjetos().get(i).equals(projeto)){
+                    cliente.getProjetos().set(i, projeto);
+                }
+            }
+        }
+        else{
+            throw new AtualizaException();
+        }
+    }
 }
