@@ -17,7 +17,7 @@ public class ProjServico {
 
     public Cliente consultaCliente(Cliente cliente) {
         List<Cliente> listAux = null;
-        if (bd.getClientes() == null) {
+        if (bd.getClientes().isEmpty()) {
             return null;
         }
         listAux = bd.getClientes().stream()
@@ -122,15 +122,17 @@ public class ProjServico {
     }
 
     public List<Projeto> getProjetosCliente(Cliente cliente){
-        if(consultaCliente(cliente)!= null){
+        
+        cliente = consultaCliente(cliente);
+        if(cliente!= null){
             return cliente.getProjetos();
         }
         return null;
     }
     
     public Projeto getProjetoCliente(Cliente cliente, Projeto projeto){
-    
-        if(consultaCliente(cliente)!= null){
+        cliente = consultaCliente(cliente);
+        if(cliente!= null){
             List<Projeto> proj = cliente.getProjetos().stream().filter(x -> x.getCodigoId() == projeto.getCodigoId()).collect(Collectors.toList());
             return proj.get(0);
         }
@@ -138,8 +140,14 @@ public class ProjServico {
     }
     
     public void cadProjeto(Cliente cliente, Projeto projeto) throws CadException{
-        if(consultaCliente(cliente)!= null){
-            cliente.addProjeto(projeto);
+        cliente = consultaCliente(cliente);
+        if(cliente!= null){
+            if(getProjetoCliente(cliente, projeto)==null){
+                cliente.addProjeto(projeto);
+            }
+            else{
+                throw new CadException();
+            }
         }
         else{
             throw new CadException();
@@ -147,9 +155,14 @@ public class ProjServico {
     }
     
     public void removeProjeto(Cliente cliente, Projeto projeto) throws RemoveException{
-        
-        if(getProjetoCliente(cliente, projeto)!= null){
-            cliente.getProjetos().remove(projeto);
+        cliente = consultaCliente(cliente);
+        if(cliente!= null){
+            if(getProjetoCliente(cliente, projeto)!=null){
+                cliente.getProjetos().remove(projeto);
+            }
+            else{
+                throw new RemoveException();
+            }
         }
         else{
             throw new RemoveException();
@@ -157,7 +170,7 @@ public class ProjServico {
     }
     
     public void atualizaProjeto(Cliente cliente, Projeto projeto) throws AtualizaException{
-        
+        cliente = consultaCliente(cliente);
         if(getProjetoCliente(cliente, projeto)!= null){
             for(int i = 0; i < cliente.getProjetos().size(); i++){
                 if(cliente.getProjetos().get(i).equals(projeto)){
