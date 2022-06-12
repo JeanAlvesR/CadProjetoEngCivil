@@ -27,6 +27,6 @@ public class Principal {
      controlador = Controlador.getControlador();
      
         System.out.println(controlador.getServico().clienteList());
-     
+  
     }
 }
