@@ -20,26 +20,55 @@ public class MenuClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbClientes = new javax.swing.JTable();
+        lbClientes = new javax.swing.JLabel();
+        btListaClientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setTitle("Menu  Clientes");
 
-        tbClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        lbClientes.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        lbClientes.setText("Clientes");
 
-            },
-            new String [] {
-                "Nome", "CPF"
+        btListaClientes.setText("Lista de Clientes");
+        btListaClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListaClientesActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(tbClientes);
+        });
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 640, 95));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(lbClientes))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(btListaClientes)))
+                .addGap(127, 127, 127))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lbClientes)
+                .addGap(58, 58, 58)
+                .addComponent(btListaClientes)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaClientesActionPerformed
+        
+        ListaClientes.getListaClientes().setVisible(true);
+        ListaClientes.getListaClientes().listaTabela();
+        
+    }//GEN-LAST:event_btListaClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +106,7 @@ public class MenuClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbClientes;
+    private javax.swing.JButton btListaClientes;
+    private javax.swing.JLabel lbClientes;
     // End of variables declaration//GEN-END:variables
 }
