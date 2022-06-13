@@ -23,7 +23,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         lbConsultaCliente = new javax.swing.JLabel();
@@ -46,92 +45,25 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         setTitle("Menu Consulta Cliente");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         lbConsultaCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         lbConsultaCliente.setText("Consulta Cliente");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 76, 0, 0);
-        jPanel1.add(lbConsultaCliente, gridBagConstraints);
 
         lbTelefoneCli.setText("Telefone:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 62, 0, 0);
-        jPanel1.add(lbTelefoneCli, gridBagConstraints);
 
         lbEmailCli.setText("Email:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 60, 0, 0);
-        jPanel1.add(lbEmailCli, gridBagConstraints);
 
         lbCpfCli.setText("CPF:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 60, 0, 0);
-        jPanel1.add(lbCpfCli, gridBagConstraints);
 
         lbNomeCli.setText("Nome:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 60, 0, 0);
-        jPanel1.add(lbNomeCli, gridBagConstraints);
 
         cxTelefoneCli.setText("...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 11;
-        gridBagConstraints.ipadx = 141;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 18, 0, 0);
-        jPanel1.add(cxTelefoneCli, gridBagConstraints);
 
         cxEmailCli.setText("...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 131;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 18, 0, 0);
-        jPanel1.add(cxEmailCli, gridBagConstraints);
 
         cxCpfCli.setText("...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 131;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 18, 0, 0);
-        jPanel1.add(cxCpfCli, gridBagConstraints);
 
         cxNomeCli.setText("...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 11;
-        gridBagConstraints.ipadx = 141;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 0);
-        jPanel1.add(cxNomeCli, gridBagConstraints);
 
         cxCpfBusca.setForeground(new java.awt.Color(153, 153, 153));
         cxCpfBusca.setText("Digite o CPF");
@@ -140,16 +72,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 cxCpfBuscaActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 44;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(82, 40, 20, 0);
-        jPanel1.add(cxCpfBusca, gridBagConstraints);
 
         btConsultar.setText("Consultar");
         btConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -157,12 +79,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 btConsultarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(85, 18, 0, 0);
-        jPanel1.add(btConsultar, gridBagConstraints);
 
         btRemoverCli.setText("Remover");
         btRemoverCli.addActionListener(new java.awt.event.ActionListener() {
@@ -170,13 +86,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 btRemoverCliActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(85, 18, 0, 0);
-        jPanel1.add(btRemoverCli, gridBagConstraints);
 
         btEditarCli.setText("Editar");
         btEditarCli.addActionListener(new java.awt.event.ActionListener() {
@@ -184,13 +93,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 btEditarCliActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 21;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(85, 18, 0, 0);
-        jPanel1.add(btEditarCli, gridBagConstraints);
 
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -198,12 +100,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 btLimparActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 36;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(85, 18, 0, 0);
-        jPanel1.add(btLimpar, gridBagConstraints);
 
         btSairMenuConsultaCliente.setText("Sair");
         btSairMenuConsultaCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -211,22 +107,91 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 btSairMenuConsultaClienteActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 37;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(85, 18, 0, 13);
-        jPanel1.add(btSairMenuConsultaCliente, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(lbConsultaCliente))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lbNomeCli)
+                .addGap(35, 35, 35)
+                .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lbCpfCli)
+                .addGap(48, 48, 48)
+                .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lbEmailCli)
+                .addGap(38, 38, 38)
+                .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(lbTelefoneCli)
+                .addGap(18, 18, 18)
+                .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btConsultar)
+                .addGap(18, 18, 18)
+                .addComponent(btRemoverCli)
+                .addGap(18, 18, 18)
+                .addComponent(btEditarCli)
+                .addGap(18, 18, 18)
+                .addComponent(btLimpar)
+                .addGap(18, 18, 18)
+                .addComponent(btSairMenuConsultaCliente))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(lbConsultaCliente)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbNomeCli)
+                    .addComponent(cxNomeCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbCpfCli)
+                    .addComponent(cxCpfCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbEmailCli)
+                    .addComponent(cxEmailCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTelefoneCli)
+                    .addComponent(cxTelefoneCli))
+                .addGap(82, 82, 82)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btConsultar)
+                            .addComponent(btRemoverCli)
+                            .addComponent(btEditarCli)
+                            .addComponent(btLimpar)
+                            .addComponent(btSairMenuConsultaCliente)))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
