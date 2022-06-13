@@ -26,6 +26,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btSairCadClientes = new javax.swing.JButton();
         lbCadastroCliente = new javax.swing.JLabel();
         lbNomeCli = new javax.swing.JLabel();
@@ -41,7 +42,10 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Clientes");
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btSairCadClientes.setText("Sair");
         btSairCadClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -49,19 +53,15 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btSairCadClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(btSairCadClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         lbCadastroCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         lbCadastroCliente.setText("Cadastro Cliente");
-        getContentPane().add(lbCadastroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 25, -1, -1));
 
         lbNomeCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbNomeCli.setText("Nome: ");
-        getContentPane().add(lbNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
 
         lbCpfCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbCpfCli.setText("CPF: ");
-        getContentPane().add(lbCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 40, -1));
 
         btCadastrarCliente.setText("Cadastrar");
         btCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,6 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btCadastrarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btCadastrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -77,49 +76,110 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(btLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
 
         cxNomeCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cxNomeCliActionPerformed(evt);
             }
         });
-        getContentPane().add(cxNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 160, -1));
 
         cxCpfCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cxCpfCliActionPerformed(evt);
             }
         });
-        getContentPane().add(cxCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 147, 160, -1));
 
         lbEmailCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbEmailCli.setText("Email: ");
-        getContentPane().add(lbEmailCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         cxEmailCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cxEmailCliActionPerformed(evt);
             }
         });
-        getContentPane().add(cxEmailCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 160, -1));
 
         lbTelefoneCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbTelefoneCli.setText("Telefone: ");
-        getContentPane().add(lbTelefoneCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         cxTelefoneCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cxTelefoneCliActionPerformed(evt);
             }
         });
-        getContentPane().add(cxTelefoneCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 160, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(lbCadastroCliente))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbEmailCli)
+                        .addGap(45, 45, 45)
+                        .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbTelefoneCli)
+                        .addGap(24, 24, 24)
+                        .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(btCadastrarCliente)
+                        .addGap(12, 12, 12)
+                        .addComponent(btLimpar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btSairCadClientes)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(lbCadastroCliente)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbNomeCli)
+                    .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lbCpfCli))
+                    .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbEmailCli)
+                    .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTelefoneCli)
+                    .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btCadastrarCliente)
+                    .addComponent(btLimpar)
+                    .addComponent(btSairCadClientes))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 340));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSairCadClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairCadClientesActionPerformed
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmacao de saida", JOptionPane.YES_NO_OPTION);
+        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmação de saída", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             sair();
         }
@@ -135,7 +195,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
 
     private void btCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarClienteActionPerformed
      cadastrar();
-     limpar();
+     
     }//GEN-LAST:event_btCadastrarClienteActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
@@ -163,24 +223,27 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         Cliente cliente = new Cliente();
         
         cliente.setNome(cxNomeCli.getText());
-        cliente.setCpf(cxEmailCli.getText());
+        cliente.setCpf(cxCpfCli.getText());
         cliente.setEmail(cxEmailCli.getText());
         cliente.setTelefone(cxTelefoneCli.getText());
         
-        if(cxNomeCli.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "O codigo precisa existir!", "ERROR", 0);
+        if(cxCpfCli.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
+            cxCpfCli.requestFocus();
             return false;
         }
   
         try{
         Controlador.getControlador().getServico().addCliente(cliente);
         JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! ", "Cadastrado", 1);
+        limpar();
         }
         catch(CadException ce){
-             JOptionPane.showMessageDialog(null, "O Cadastro nao deu certo", "ERROR", 0);
+             JOptionPane.showMessageDialog(null, "O Cadastro não deu certo! Verifique o código.", "ERROR", 0);
+             cxCpfCli.requestFocus();
         }
         
-        limpar();
+        
         return true;
     
     }
@@ -232,6 +295,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
     private javax.swing.JTextField cxEmailCli;
     private javax.swing.JTextField cxNomeCli;
     private javax.swing.JTextField cxTelefoneCli;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbCadastroCliente;
     private javax.swing.JLabel lbCpfCli;
     private javax.swing.JLabel lbEmailCli;

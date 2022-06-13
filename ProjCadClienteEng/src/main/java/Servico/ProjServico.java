@@ -16,8 +16,6 @@ public class ProjServico {
     private BdAplicacao bd = new BdAplicacao();
 
     public Cliente consultaCliente(Cliente cliente) {
-        List<Cliente> listAux = null;
-        System.out.println(cliente.getCpf());
         if (bd.getClientes().isEmpty()) {
             return null;
         }

@@ -24,33 +24,44 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lbConsultaCliente = new javax.swing.JLabel();
-        lbNomeCli = new javax.swing.JLabel();
-        lbCpfCli = new javax.swing.JLabel();
-        lbEmailCli = new javax.swing.JLabel();
         lbTelefoneCli = new javax.swing.JLabel();
+        lbEmailCli = new javax.swing.JLabel();
+        lbCpfCli = new javax.swing.JLabel();
+        lbNomeCli = new javax.swing.JLabel();
+        cxTelefoneCli = new javax.swing.JLabel();
+        cxEmailCli = new javax.swing.JLabel();
+        cxCpfCli = new javax.swing.JLabel();
         cxNomeCli = new javax.swing.JLabel();
         cxCpfBusca = new javax.swing.JTextField();
         btConsultar = new javax.swing.JButton();
-        cxCpfCli = new javax.swing.JLabel();
-        cxEmailCli = new javax.swing.JLabel();
-        cxTelefoneCli = new javax.swing.JLabel();
         btRemoverCli = new javax.swing.JButton();
-        btLimpar = new javax.swing.JButton();
         btEditarCli = new javax.swing.JButton();
+        btLimpar = new javax.swing.JButton();
+        btSairMenuConsultaCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu Consulta Cliente");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lbConsultaCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         lbConsultaCliente.setText("Consulta Cliente");
 
-        lbNomeCli.setText("Nome:");
-
-        lbCpfCli.setText("CPF:");
+        lbTelefoneCli.setText("Telefone:");
 
         lbEmailCli.setText("Email:");
 
-        lbTelefoneCli.setText("Telefone:");
+        lbCpfCli.setText("CPF:");
+
+        lbNomeCli.setText("Nome:");
+
+        cxTelefoneCli.setText("...");
+
+        cxEmailCli.setText("...");
+
+        cxCpfCli.setText("...");
 
         cxNomeCli.setText("...");
 
@@ -69,23 +80,10 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
-        cxCpfCli.setText("...");
-
-        cxEmailCli.setText("...");
-
-        cxTelefoneCli.setText("...");
-
         btRemoverCli.setText("Remover");
         btRemoverCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btRemoverCliActionPerformed(evt);
-            }
-        });
-
-        btLimpar.setText("Limpar");
-        btLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLimparActionPerformed(evt);
             }
         });
 
@@ -96,80 +94,105 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
+
+        btSairMenuConsultaCliente.setText("Sair");
+        btSairMenuConsultaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairMenuConsultaClienteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lbCpfCli)
+                        .addGap(26, 26, 26)
+                        .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lbEmailCli)
+                        .addGap(26, 26, 26)
+                        .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbTelefoneCli)
+                        .addGap(28, 28, 28)
+                        .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lbNomeCli)
+                        .addGap(23, 23, 23)
+                        .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btConsultar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btRemoverCli)
+                        .addGap(18, 18, 18)
+                        .addComponent(btEditarCli)
+                        .addGap(18, 18, 18)
+                        .addComponent(btLimpar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btSairMenuConsultaCliente)))
+                .addContainerGap(13, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbConsultaCliente)
+                .addGap(211, 211, 211))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(lbConsultaCliente)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbNomeCli)
+                    .addComponent(cxNomeCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbCpfCli)
+                    .addComponent(cxCpfCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbEmailCli)
+                    .addComponent(cxEmailCli))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTelefoneCli)
+                    .addComponent(cxTelefoneCli))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConsultar)
+                    .addComponent(btRemoverCli)
+                    .addComponent(btEditarCli)
+                    .addComponent(btLimpar)
+                    .addComponent(btSairMenuConsultaCliente))
+                .addGap(20, 20, 20))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(lbCpfCli)
-                                .addGap(26, 26, 26)
-                                .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(lbEmailCli)
-                                .addGap(26, 26, 26)
-                                .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lbTelefoneCli)
-                                .addGap(28, 28, 28)
-                                .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(lbNomeCli)
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbConsultaCliente)
-                                    .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addComponent(btLimpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btConsultar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btRemoverCli)
-                        .addGap(7, 7, 7)
-                        .addComponent(btEditarCli)))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lbConsultaCliente)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNomeCli)
-                    .addComponent(cxNomeCli))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbCpfCli)
-                    .addComponent(cxCpfCli))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbEmailCli)
-                    .addComponent(cxEmailCli))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbTelefoneCli)
-                    .addComponent(cxTelefoneCli))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btConsultar)
-                        .addComponent(btRemoverCli)
-                        .addComponent(btLimpar)
-                        .addComponent(btEditarCli)))
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -184,7 +207,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btRemoverCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverCliActionPerformed
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmacao de remocao", JOptionPane.YES_NO_OPTION);
+        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmação de remoção", JOptionPane.YES_NO_OPTION);
 
         if (resp == 0) {
             remover();
@@ -200,7 +223,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     private void btEditarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarCliActionPerformed
         Cliente cliente = verificaCliente();
         if (cliente == null) {
-            JOptionPane.showMessageDialog(null, "O cliente nao existe!", "ERROR", 0);
+            JOptionPane.showMessageDialog(null, "O cliente não existe!", "ERROR", 0);
 
         } else {
             MenuAtualizarCliente.getMenuAtualizarCliente().setVisible(true);
@@ -208,6 +231,17 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btEditarCliActionPerformed
 
+    private void btSairMenuConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairMenuConsultaClienteActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmação de saída", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            sair();
+        }
+    }//GEN-LAST:event_btSairMenuConsultaClienteActionPerformed
+
+    public void sair(){
+        this.dispose();
+    }
+    
     public Cliente verificaCliente() {
         if (cxCpfBusca.getText().isEmpty()) {
             return null;
@@ -234,7 +268,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         cliente.setCpf(cxCpfBusca.getText());
 
         if (cxCpfBusca.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "O codigo precisa existir!", "ERROR", 0);
+            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
             return false;
         }
 
@@ -242,7 +276,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             Controlador.getControlador().getServico().removeCliente(cliente);
             JOptionPane.showMessageDialog(null, "Cliente removido com sucesso!", "Removido", 1);
         } catch (RemoveException re) {
-            JOptionPane.showMessageDialog(null, "Cliente nao encontrado!", "ERROR", 0);
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado!", "ERROR", 0);
             return false;
         }
 
@@ -262,7 +296,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             cxEmailCli.setText(cliente.getEmail());
             cxTelefoneCli.setText(cliente.getTelefone());
         } else {
-            JOptionPane.showMessageDialog(null, "Cliente nao encontrado!", "ERROR", 0);
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado!", "ERROR", 0);
         }
 
     }
@@ -314,11 +348,13 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btEditarCli;
     private javax.swing.JButton btLimpar;
     private javax.swing.JButton btRemoverCli;
+    private javax.swing.JButton btSairMenuConsultaCliente;
     private javax.swing.JTextField cxCpfBusca;
     private javax.swing.JLabel cxCpfCli;
     private javax.swing.JLabel cxEmailCli;
     private javax.swing.JLabel cxNomeCli;
     private javax.swing.JLabel cxTelefoneCli;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbConsultaCliente;
     private javax.swing.JLabel lbCpfCli;
     private javax.swing.JLabel lbEmailCli;
