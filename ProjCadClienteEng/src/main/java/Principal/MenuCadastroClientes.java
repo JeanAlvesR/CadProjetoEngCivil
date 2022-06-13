@@ -152,7 +152,9 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
 
     public void limpar(){
     cxNomeCli.setText("");
+    cxCpfCli.setText("");
     cxEmailCli.setText("");
+    cxTelefoneCli.setText("");
     cxNomeCli.requestFocus();
 
     }
@@ -173,6 +175,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "O Cadastro nao deu certo", "ERROR", 0);
         }
         
+        limpar();
     
     }
     

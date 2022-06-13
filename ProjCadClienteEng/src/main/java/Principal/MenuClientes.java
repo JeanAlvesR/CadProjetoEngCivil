@@ -22,8 +22,8 @@ public class MenuClientes extends javax.swing.JFrame {
 
         lbClientes = new javax.swing.JLabel();
         btListaClientes = new javax.swing.JButton();
+        btConsultar = new javax.swing.JButton();
         btCadCliente = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu  Clientes");
@@ -38,17 +38,17 @@ public class MenuClientes extends javax.swing.JFrame {
             }
         });
 
+        btConsultar.setText("Consultar");
+        btConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarActionPerformed(evt);
+            }
+        });
+
         btCadCliente.setText("Cadastro");
         btCadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCadClienteActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Consultar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -59,15 +59,17 @@ public class MenuClientes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btCadCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                            .addComponent(btConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))))
+                .addGap(125, 125, 125))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(btListaClientes)
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +79,7 @@ public class MenuClientes extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(btCadCliente)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btConsultar)
                 .addGap(18, 18, 18)
                 .addComponent(btListaClientes)
                 .addContainerGap(68, Short.MAX_VALUE))
@@ -97,9 +99,9 @@ public class MenuClientes extends javax.swing.JFrame {
         MenuCadastroClientes.getMenuCadastroClientes().setVisible(true);
     }//GEN-LAST:event_btCadClienteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
+        MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
+    }//GEN-LAST:event_btConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,8 +140,8 @@ public class MenuClientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadCliente;
+    private javax.swing.JButton btConsultar;
     private javax.swing.JButton btListaClientes;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lbClientes;
     // End of variables declaration//GEN-END:variables
 }
