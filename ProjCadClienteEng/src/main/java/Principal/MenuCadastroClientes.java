@@ -159,13 +159,18 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
 
     }
     
-    public void cadastrar(){
+    public boolean cadastrar(){
         Cliente cliente = new Cliente();
         
         cliente.setNome(cxNomeCli.getText());
         cliente.setCpf(cxEmailCli.getText());
         cliente.setEmail(cxEmailCli.getText());
         cliente.setTelefone(cxTelefoneCli.getText());
+        
+        if(cxNomeCli.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "O codigo precisa existir!", "ERROR", 0);
+            return false;
+        }
   
         try{
         Controlador.getControlador().getServico().addCliente(cliente);
@@ -176,6 +181,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         }
         
         limpar();
+        return true;
     
     }
     

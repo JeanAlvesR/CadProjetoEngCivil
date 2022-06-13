@@ -44,7 +44,7 @@ public class ProjServico {
     //Dispara exceção, caso o cliente nao existe...
     public void removeCliente(Cliente cliente) throws RemoveException {
         if (consultaCliente(cliente) != null) {
-            bd.getFuncionarios().remove(cliente);
+            bd.getClientes().remove(cliente);
         } else {
             throw new RemoveException();
         }
