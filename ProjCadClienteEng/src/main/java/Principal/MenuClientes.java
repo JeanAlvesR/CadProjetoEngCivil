@@ -22,6 +22,7 @@ public class MenuClientes extends javax.swing.JFrame {
 
         lbClientes = new javax.swing.JLabel();
         btListaClientes = new javax.swing.JButton();
+        btCadCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu  Clientes");
@@ -36,28 +37,35 @@ public class MenuClientes extends javax.swing.JFrame {
             }
         });
 
+        btCadCliente.setText("Cadastro");
+        btCadCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(lbClientes))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(btListaClientes)))
-                .addGap(127, 127, 127))
+                .addGap(130, 130, 130)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbClientes)
+                    .addComponent(btCadCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(119, 119, 119))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(lbClientes)
-                .addGap(58, 58, 58)
+                .addGap(34, 34, 34)
                 .addComponent(btListaClientes)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btCadCliente)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         pack();
@@ -69,6 +77,10 @@ public class MenuClientes extends javax.swing.JFrame {
         ListaClientes.getListaClientes().listaTabela();
         
     }//GEN-LAST:event_btListaClientesActionPerformed
+
+    private void btCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadClienteActionPerformed
+        MenuCadastroClientes.getMenuCadastroClientes().setVisible(true);
+    }//GEN-LAST:event_btCadClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,6 +118,7 @@ public class MenuClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCadCliente;
     private javax.swing.JButton btListaClientes;
     private javax.swing.JLabel lbClientes;
     // End of variables declaration//GEN-END:variables

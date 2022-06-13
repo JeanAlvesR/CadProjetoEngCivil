@@ -17,14 +17,16 @@ public class ProjServico {
 
     public Cliente consultaCliente(Cliente cliente) {
         List<Cliente> listAux = null;
+        System.out.println(cliente.getCpf());
         if (bd.getClientes().isEmpty()) {
             return null;
         }
-        listAux = bd.getClientes().stream()
-                .filter(clienteList -> clienteList.getCpf() == cliente.getCpf())
-                .collect(Collectors.toList());
-
-        return listAux == null ? null : listAux.get(0);
+        for(Cliente cliBd : bd.getClientes()){
+            if(cliente.equals(cliBd)){
+                return cliBd;
+            }
+        }
+        return null;
 
     }
 

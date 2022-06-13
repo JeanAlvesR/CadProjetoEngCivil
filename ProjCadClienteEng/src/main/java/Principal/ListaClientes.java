@@ -2,6 +2,7 @@ package Principal;
 
 import Controler.Controlador;
 import Entidades.Cliente;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ListaClientes extends javax.swing.JFrame {
@@ -38,6 +39,7 @@ public class ListaClientes extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tbClientes = new javax.swing.JTable();
+        btSairListaClientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,11 +57,29 @@ public class ListaClientes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -5, 400, 310));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -5, 400, 260));
+
+        btSairListaClientes.setText("Sair");
+        btSairListaClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairListaClientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btSairListaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btSairListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairListaClientesActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmacao de saida", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            sair();
+        }
+    }//GEN-LAST:event_btSairListaClientesActionPerformed
+
+    public void sair(){
+        this.dispose();
+    }
     /**
          * @param args the command line arguments
          */
@@ -96,6 +116,7 @@ public class ListaClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btSairListaClientes;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbClientes;
     // End of variables declaration//GEN-END:variables
