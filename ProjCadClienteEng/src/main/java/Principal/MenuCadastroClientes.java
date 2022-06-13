@@ -30,10 +30,14 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         lbCadastroCliente = new javax.swing.JLabel();
         lbNomeCli = new javax.swing.JLabel();
         lbCpfCli = new javax.swing.JLabel();
-        cxNomeCli = new javax.swing.JTextField();
-        cxCpfCli = new javax.swing.JTextField();
         btCadastrarCliente = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
+        cxNomeCli = new javax.swing.JTextField();
+        cxCpfCli = new javax.swing.JTextField();
+        lbEmailCli = new javax.swing.JLabel();
+        cxEmailCli = new javax.swing.JTextField();
+        lbTelefoneCli = new javax.swing.JLabel();
+        cxTelefoneCli = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Clientes");
@@ -45,7 +49,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btSairCadClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(btSairCadClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 271, -1, -1));
+        getContentPane().add(btSairCadClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         lbCadastroCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         lbCadastroCliente.setText("Cadastro Cliente");
@@ -53,25 +57,11 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
 
         lbNomeCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbNomeCli.setText("Nome: ");
-        getContentPane().add(lbNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, -1));
+        getContentPane().add(lbNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
 
         lbCpfCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         lbCpfCli.setText("CPF: ");
-        getContentPane().add(lbCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 40, -1));
-
-        cxNomeCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxNomeCliActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cxNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 166, -1));
-
-        cxCpfCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxCpfCliActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cxCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 147, 166, -1));
+        getContentPane().add(lbCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 40, -1));
 
         btCadastrarCliente.setText("Cadastrar");
         btCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +69,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btCadastrarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btCadastrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 271, -1, -1));
+        getContentPane().add(btCadastrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +77,43 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btLimparActionPerformed(evt);
             }
         });
-        getContentPane().add(btLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 271, -1, -1));
+        getContentPane().add(btLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+
+        cxNomeCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxNomeCliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cxNomeCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 160, -1));
+
+        cxCpfCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxCpfCliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cxCpfCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 147, 160, -1));
+
+        lbEmailCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbEmailCli.setText("Email: ");
+        getContentPane().add(lbEmailCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        cxEmailCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxEmailCliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cxEmailCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 160, -1));
+
+        lbTelefoneCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbTelefoneCli.setText("Telefone: ");
+        getContentPane().add(lbTelefoneCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        cxTelefoneCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxTelefoneCliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cxTelefoneCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 160, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,9 +125,9 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btSairCadClientesActionPerformed
 
-    private void cxCpfCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxCpfCliActionPerformed
+    private void cxEmailCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxEmailCliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cxCpfCliActionPerformed
+    }//GEN-LAST:event_cxEmailCliActionPerformed
 
     private void cxNomeCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxNomeCliActionPerformed
         // TODO add your handling code here:
@@ -116,9 +142,17 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         limpar();
     }//GEN-LAST:event_btLimparActionPerformed
 
+    private void cxCpfCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxCpfCliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cxCpfCliActionPerformed
+
+    private void cxTelefoneCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxTelefoneCliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cxTelefoneCliActionPerformed
+
     public void limpar(){
     cxNomeCli.setText("");
-    cxCpfCli.setText("");
+    cxEmailCli.setText("");
     cxNomeCli.requestFocus();
 
     }
@@ -127,8 +161,10 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
         Cliente cliente = new Cliente();
         
         cliente.setNome(cxNomeCli.getText());
-        cliente.setCpf(cxCpfCli.getText());
-            
+        cliente.setCpf(cxEmailCli.getText());
+        cliente.setEmail(cxEmailCli.getText());
+        cliente.setTelefone(cxTelefoneCli.getText());
+  
         try{
         Controlador.getControlador().getServico().addCliente(cliente);
         JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! ", "Cadastrado", 1);
@@ -184,9 +220,13 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
     private javax.swing.JButton btLimpar;
     private javax.swing.JButton btSairCadClientes;
     private javax.swing.JTextField cxCpfCli;
+    private javax.swing.JTextField cxEmailCli;
     private javax.swing.JTextField cxNomeCli;
+    private javax.swing.JTextField cxTelefoneCli;
     private javax.swing.JLabel lbCadastroCliente;
     private javax.swing.JLabel lbCpfCli;
+    private javax.swing.JLabel lbEmailCli;
     private javax.swing.JLabel lbNomeCli;
+    private javax.swing.JLabel lbTelefoneCli;
     // End of variables declaration//GEN-END:variables
 }
