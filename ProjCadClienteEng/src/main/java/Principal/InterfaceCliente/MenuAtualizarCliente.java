@@ -1,38 +1,36 @@
-package Principal;
+package Principal.InterfaceCliente;
 
 import Controler.Controlador;
 import Entidades.Cliente;
 import Servico.Exceptions.AtualizaException;
 import javax.swing.JOptionPane;
 
-
 public class MenuAtualizarCliente extends javax.swing.JFrame {
-    
+
     private static MenuAtualizarCliente menuAtualizarCliente = null;
 
     private MenuAtualizarCliente() {
         initComponents();
-        
+
     }
-    public void impDados(Cliente cliente){
+
+    public void impDados(Cliente cliente) {
         cxNomeCli.setText(cliente.getNome());
         cxCpfCli.setText(cliente.getCpf());
         cxEmailCli.setText(cliente.getEmail());
         cxTelefoneCli.setText(cliente.getTelefone());
     }
-    
-    public static MenuAtualizarCliente getMenuAtualizarCliente(){
-    
-        if(menuAtualizarCliente == null){
+
+    public static MenuAtualizarCliente getMenuAtualizarCliente() {
+
+        if (menuAtualizarCliente == null) {
             menuAtualizarCliente = new MenuAtualizarCliente();
         }
-        
+
         //Metodo que imprime na tela os dados...
-        
         return menuAtualizarCliente;
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -54,6 +52,16 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu de Atualização do Cliente");
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setLocationByPlatform(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
@@ -98,16 +106,16 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         lbEmailCli.setText("Email:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
         jPanel1.add(lbEmailCli, gridBagConstraints);
 
         lbTelefoneCli.setText("Telefone:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 20, 0, 0);
@@ -123,16 +131,16 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         jPanel1.add(cxNomeCli, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 103;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 11, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 11, 0, 0);
         jPanel1.add(cxEmailCli, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 102;
@@ -148,7 +156,7 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(46, 72, 6, 0);
         jPanel1.add(btAtualizarCli, gridBagConstraints);
@@ -161,7 +169,7 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(46, 12, 6, 7);
@@ -184,10 +192,11 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btAtualizarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarCliActionPerformed
-        atualizar();
-        Cliente cliente = capturaDados();
-        MenuConsultaCliente.getMenuConsultaCliente().consultaAtualizada(cliente);
-        sair();
+        if (atualizar()) {
+            Cliente cliente = capturaDados();
+            MenuConsultaCliente.getMenuConsultaCliente().consultaAtualizada(cliente);
+            sair();
+        }
     }//GEN-LAST:event_btAtualizarCliActionPerformed
 
     private void brSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brSairActionPerformed
@@ -197,39 +206,50 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_brSairActionPerformed
 
-    public Cliente capturaDados(){
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        MenuConsultaCliente.getMenuConsultaCliente().setVisible(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
+
+    public Cliente capturaDados() {
         Cliente cliente = new Cliente();
-        
+
         cliente.setNome(cxNomeCli.getText());
         cliente.setCpf(cxCpfCli.getText());
         cliente.setEmail(cxEmailCli.getText());
         cliente.setTelefone(cxTelefoneCli.getText());
         return cliente;
     }
-    
+
     public void sair() {
         this.dispose();
     }
-    public void atualizar(){
-    
-    int resp = JOptionPane.showConfirmDialog(null, "Todos os campos serão atualizados. Deseja realmente Atualizar? ", "Confirmação de Atualização", JOptionPane.YES_NO_CANCEL_OPTION);
 
-    if(resp==0){
-        Cliente cliente = new Cliente();
-        cliente.setNome(cxNomeCli.getText());
-        cliente.setCpf(cxCpfCli.getText());
-        cliente.setEmail(cxEmailCli.getText());
-        cliente.setTelefone(cxTelefoneCli.getText());
-        
-        try{
-            Controlador.getControlador().getServico().atualizaCliente(cliente);
-        }catch(AtualizaException ae){
-            JOptionPane.showMessageDialog(null, "Erro Encontrado!", "ERROR", 0);
+    public boolean atualizar() {
+
+        int resp = JOptionPane.showConfirmDialog(null, "Todos os campos serão atualizados. Deseja realmente Atualizar? ", "Confirmação de Atualização", JOptionPane.YES_NO_CANCEL_OPTION);
+
+        if (resp == 0) {
+            Cliente cliente = new Cliente();
+            cliente.setNome(cxNomeCli.getText());
+            cliente.setCpf(cxCpfCli.getText());
+            cliente.setEmail(cxEmailCli.getText());
+            cliente.setTelefone(cxTelefoneCli.getText());
+
+            try {
+                Controlador.getControlador().getServico().atualizaCliente(cliente);
+                return true;
+            } catch (AtualizaException ae) {
+                JOptionPane.showMessageDialog(null, "Erro Encontrado!", "ERROR", 0);
+            }
+
         }
+        return false;
     }
-    
-    }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

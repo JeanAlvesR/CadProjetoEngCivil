@@ -1,4 +1,4 @@
-package Principal;
+package Principal.InterfaceCliente;
 
 import Controler.Controlador;
 import Entidades.Cliente;
@@ -44,6 +44,16 @@ public class ListaClientes extends javax.swing.JFrame {
         tbClientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setLocationByPlatform(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,6 +109,14 @@ public class ListaClientes extends javax.swing.JFrame {
             sair();
         }
     }//GEN-LAST:event_btSairListaClientesActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        MenuClientes.getMenuClientes().setVisible(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+       MenuClientes.getMenuClientes().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
 
     public void sair(){
         this.dispose();

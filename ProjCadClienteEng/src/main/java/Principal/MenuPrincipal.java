@@ -1,24 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Principal;
 
+import Principal.IntefaceFuncionario.MenuFuncionario;
+import Principal.InterfaceCliente.MenuClientes;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author farias
- */
+
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuPrincipal
-     */
-    public MenuPrincipal() {
+    private static MenuPrincipal menuPrincipal = null;
+    
+    private MenuPrincipal() {
         initComponents();
     }
+    
+    public static MenuPrincipal getMenuPrincipal(){
+        return menuPrincipal;
+    }
 
+    public void setMenuPrincipal(MenuPrincipal menuPrincipal){
+        this.menuPrincipal = menuPrincipal;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,12 +29,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel0 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        PainelImgPrin = new javax.swing.JPanel();
+        lbImgPrin = new javax.swing.JLabel();
+        PainelTituloPrin = new javax.swing.JPanel();
         txtGerenciadorProj = new javax.swing.JLabel();
+        PainelOpcPrin = new javax.swing.JPanel();
         btClientes = new javax.swing.JButton();
+        btFuncionariosPrin = new javax.swing.JButton();
         btSairPrin = new javax.swing.JButton();
 
         jPanel0.setForeground(new java.awt.Color(242, 242, 242));
@@ -51,57 +56,127 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setLocationByPlatform(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        PainelImgPrin.setBackground(new java.awt.Color(102, 102, 102));
 
-        txtGerenciadorProj.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        lbImgPrin.setBackground(new java.awt.Color(0, 0, 0));
+        lbImgPrin.setIcon(new javax.swing.ImageIcon("/home/farias/Desktop/JeanProj/ProjCadClienteEng/src/main/java/img/office.png")); // NOI18N
+
+        javax.swing.GroupLayout PainelImgPrinLayout = new javax.swing.GroupLayout(PainelImgPrin);
+        PainelImgPrin.setLayout(PainelImgPrinLayout);
+        PainelImgPrinLayout.setHorizontalGroup(
+            PainelImgPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbImgPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        PainelImgPrinLayout.setVerticalGroup(
+            PainelImgPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbImgPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        PainelTituloPrin.setBackground(new java.awt.Color(51, 51, 51));
+
+        txtGerenciadorProj.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
+        txtGerenciadorProj.setForeground(new java.awt.Color(255, 255, 255));
         txtGerenciadorProj.setText("Gerenciador de Projetos");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 62, 0, 0);
-        jPanel1.add(txtGerenciadorProj, gridBagConstraints);
 
+        javax.swing.GroupLayout PainelTituloPrinLayout = new javax.swing.GroupLayout(PainelTituloPrin);
+        PainelTituloPrin.setLayout(PainelTituloPrinLayout);
+        PainelTituloPrinLayout.setHorizontalGroup(
+            PainelTituloPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelTituloPrinLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtGerenciadorProj)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PainelTituloPrinLayout.setVerticalGroup(
+            PainelTituloPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelTituloPrinLayout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(txtGerenciadorProj)
+                .addGap(14, 14, 14))
+        );
+
+        PainelOpcPrin.setBackground(new java.awt.Color(0, 0, 0));
+
+        btClientes.setBackground(new java.awt.Color(102, 102, 102));
+        btClientes.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btClientes.setForeground(new java.awt.Color(255, 255, 255));
         btClientes.setText("Clientes");
         btClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btClientesActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(56, 164, 0, 0);
-        jPanel1.add(btClientes, gridBagConstraints);
 
+        btFuncionariosPrin.setBackground(new java.awt.Color(102, 102, 102));
+        btFuncionariosPrin.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btFuncionariosPrin.setForeground(new java.awt.Color(255, 255, 255));
+        btFuncionariosPrin.setText("Funcionários");
+        btFuncionariosPrin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFuncionariosPrinActionPerformed(evt);
+            }
+        });
+
+        btSairPrin.setBackground(new java.awt.Color(102, 102, 102));
+        btSairPrin.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btSairPrin.setForeground(new java.awt.Color(255, 255, 255));
         btSairPrin.setText("Sair");
         btSairPrin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSairPrinActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(41, 10, 6, 6);
-        jPanel1.add(btSairPrin, gridBagConstraints);
+
+        javax.swing.GroupLayout PainelOpcPrinLayout = new javax.swing.GroupLayout(PainelOpcPrin);
+        PainelOpcPrin.setLayout(PainelOpcPrinLayout);
+        PainelOpcPrinLayout.setHorizontalGroup(
+            PainelOpcPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelOpcPrinLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(PainelOpcPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btFuncionariosPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelOpcPrinLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btSairPrin)
+                .addContainerGap())
+        );
+        PainelOpcPrinLayout.setVerticalGroup(
+            PainelOpcPrinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelOpcPrinLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(btClientes)
+                .addGap(18, 18, 18)
+                .addComponent(btFuncionariosPrin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btSairPrin)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PainelImgPrin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PainelTituloPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PainelOpcPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(PainelImgPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PainelTituloPrin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(PainelOpcPrin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +192,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             sair();
         }
     }//GEN-LAST:event_btSairPrinActionPerformed
+
+    private void btFuncionariosPrinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionariosPrinActionPerformed
+        MenuFuncionario.getMenuFuncionario().setVisible(true);
+    }//GEN-LAST:event_btFuncionariosPrinActionPerformed
 
     public void sair(){
         this.dispose();
@@ -152,16 +231,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+               MenuPrincipal menuPrincipal = new MenuPrincipal();
+               menuPrincipal.setMenuPrincipal(menuPrincipal);
+                menuPrincipal.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PainelImgPrin;
+    private javax.swing.JPanel PainelOpcPrin;
+    private javax.swing.JPanel PainelTituloPrin;
     private javax.swing.JButton btClientes;
+    private javax.swing.JButton btFuncionariosPrin;
     private javax.swing.JButton btSairPrin;
     private javax.swing.JPanel jPanel0;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbImgPrin;
     private javax.swing.JLabel txtGerenciadorProj;
     // End of variables declaration//GEN-END:variables
 }
