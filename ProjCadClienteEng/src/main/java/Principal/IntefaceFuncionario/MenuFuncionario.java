@@ -22,6 +22,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private void initComponents() {
 
         Painel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Funcionários");
@@ -31,15 +32,23 @@ public class MenuFuncionario extends javax.swing.JFrame {
         Painel1.setBackground(new java.awt.Color(255, 255, 255));
         Painel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout Painel1Layout = new javax.swing.GroupLayout(Painel1);
         Painel1.setLayout(Painel1Layout);
         Painel1Layout.setHorizontalGroup(
             Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 451, Short.MAX_VALUE)
+            .addGroup(Painel1Layout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(jButton1)
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         Painel1Layout.setVerticalGroup(
             Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 256, Short.MAX_VALUE)
+            .addGroup(Painel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jButton1)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,5 +104,6 @@ public class MenuFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Painel1;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
