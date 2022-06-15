@@ -1,37 +1,41 @@
-package Principal.InterfaceCliente;
+package Principal.IntefaceFuncionario;
 
-import Principal.MenuPrincipal;
 import javax.swing.JOptionPane;
 
-public class MenuClientes extends javax.swing.JFrame {
+public class MenuCadastroFuncionarios extends javax.swing.JFrame {
 
-    private static MenuClientes menuClientes = null;
 
-    private MenuClientes() {
+    private static MenuCadastroFuncionarios menuCadastroFuncionarios = null;
+    
+    private MenuCadastroFuncionarios() {
         initComponents();
     }
 
-    public static MenuClientes getMenuClientes() {
-        if (menuClientes == null) {
-            menuClientes = new MenuClientes();
+    public static MenuCadastroFuncionarios getMenuCadastroFuncionarios(){
+        
+        if(menuCadastroFuncionarios == null){
+            menuCadastroFuncionarios = new MenuCadastroFuncionarios();
         }
-        return menuClientes;
+        
+        return menuCadastroFuncionarios;
     }
-
+            
+            
+            
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btConsultar = new javax.swing.JButton();
-        btCadCliente = new javax.swing.JButton();
-        btSairMenuCliente = new javax.swing.JButton();
-        btListaClientes = new javax.swing.JButton();
+        btCadArq = new javax.swing.JButton();
+        btCadEng = new javax.swing.JButton();
+        btSairMenuFunc = new javax.swing.JButton();
+        btCadFuncGeral = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        lbClientes = new javax.swing.JLabel();
+        lbFunc = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Menu  Clientes");
+        setTitle("Menu Cadastro de Funcionários");
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setLocationByPlatform(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -41,50 +45,47 @@ public class MenuClientes extends javax.swing.JFrame {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
             }
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        btConsultar.setBackground(new java.awt.Color(102, 102, 102));
-        btConsultar.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultar.setText("Consultar");
-        btConsultar.addActionListener(new java.awt.event.ActionListener() {
+        btCadArq.setBackground(new java.awt.Color(102, 102, 102));
+        btCadArq.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btCadArq.setForeground(new java.awt.Color(255, 255, 255));
+        btCadArq.setText("Arquiteto");
+        btCadArq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarActionPerformed(evt);
+                btCadArqActionPerformed(evt);
             }
         });
 
-        btCadCliente.setBackground(new java.awt.Color(102, 102, 102));
-        btCadCliente.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btCadCliente.setForeground(new java.awt.Color(255, 255, 255));
-        btCadCliente.setText("Cadastrar");
-        btCadCliente.addActionListener(new java.awt.event.ActionListener() {
+        btCadEng.setBackground(new java.awt.Color(102, 102, 102));
+        btCadEng.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btCadEng.setForeground(new java.awt.Color(255, 255, 255));
+        btCadEng.setText("Engenheiro");
+        btCadEng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadClienteActionPerformed(evt);
+                btCadEngActionPerformed(evt);
             }
         });
 
-        btSairMenuCliente.setBackground(new java.awt.Color(102, 102, 102));
-        btSairMenuCliente.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btSairMenuCliente.setForeground(new java.awt.Color(255, 255, 255));
-        btSairMenuCliente.setText("Sair");
-        btSairMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+        btSairMenuFunc.setBackground(new java.awt.Color(102, 102, 102));
+        btSairMenuFunc.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btSairMenuFunc.setForeground(new java.awt.Color(255, 255, 255));
+        btSairMenuFunc.setText("Sair");
+        btSairMenuFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSairMenuClienteActionPerformed(evt);
+                btSairMenuFuncActionPerformed(evt);
             }
         });
 
-        btListaClientes.setBackground(new java.awt.Color(102, 102, 102));
-        btListaClientes.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btListaClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btListaClientes.setText("Listar Clientes");
-        btListaClientes.addActionListener(new java.awt.event.ActionListener() {
+        btCadFuncGeral.setBackground(new java.awt.Color(102, 102, 102));
+        btCadFuncGeral.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btCadFuncGeral.setForeground(new java.awt.Color(255, 255, 255));
+        btCadFuncGeral.setText("Funcionario Geral");
+        btCadFuncGeral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btListaClientesActionPerformed(evt);
+                btCadFuncGeralActionPerformed(evt);
             }
         });
 
@@ -95,36 +96,34 @@ public class MenuClientes extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btCadCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btConsultar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btListaClientes)))
+                    .addComponent(btCadEng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btCadArq, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btCadFuncGeral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
-                .addComponent(btSairMenuCliente)
+                .addComponent(btSairMenuFunc)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(btCadCliente)
+                .addComponent(btCadEng)
                 .addGap(18, 18, 18)
-                .addComponent(btConsultar)
+                .addComponent(btCadArq)
                 .addGap(18, 18, 18)
-                .addComponent(btListaClientes)
+                .addComponent(btCadFuncGeral)
                 .addGap(0, 76, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btSairMenuCliente)
+                .addComponent(btSairMenuFunc)
                 .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
-        lbClientes.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
-        lbClientes.setForeground(new java.awt.Color(255, 255, 255));
-        lbClientes.setText("Clientes");
+        lbFunc.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
+        lbFunc.setForeground(new java.awt.Color(255, 255, 255));
+        lbFunc.setText("Cadastro de Funcionários");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -132,15 +131,15 @@ public class MenuClientes extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbClientes)
-                .addGap(102, 102, 102))
+                .addComponent(lbFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(lbClientes)
-                .addGap(26, 26, 26))
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(lbFunc)
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,43 +161,39 @@ public class MenuClientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaClientesActionPerformed
+    private void btCadArqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadArqActionPerformed
+        
+    }//GEN-LAST:event_btCadArqActionPerformed
 
-        ListaClientes.getListaClientes().setVisible(true);
-        ListaClientes.getListaClientes().listaTabela();
+    private void btCadEngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadEngActionPerformed
+        
+    }//GEN-LAST:event_btCadEngActionPerformed
 
-    }//GEN-LAST:event_btListaClientesActionPerformed
-
-    private void btCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadClienteActionPerformed
-        MenuCadastroClientes.getMenuCadastroClientes().setVisible(true);
-    }//GEN-LAST:event_btCadClienteActionPerformed
-
-    private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-        MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
-    }//GEN-LAST:event_btConsultarActionPerformed
-
-    private void btSairMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairMenuClienteActionPerformed
+    private void btSairMenuFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairMenuFuncActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmação de saída", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             sair();
         }
-    }//GEN-LAST:event_btSairMenuClienteActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-    }//GEN-LAST:event_formWindowOpened
-
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        MenuPrincipal.getMenuPrincipal().setVisible(true);
-    }//GEN-LAST:event_formWindowClosed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        MenuPrincipal.getMenuPrincipal().setVisible(false);
-    }//GEN-LAST:event_formWindowActivated
+    }//GEN-LAST:event_btSairMenuFuncActionPerformed
 
     public void sair(){
         this.dispose();
     }
     
+    private void btCadFuncGeralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadFuncGeralActionPerformed
+
+        //ListaClientes.getListaClientes().setVisible(true);
+        //ListaClientes.getListaClientes().listaTabela();
+    }//GEN-LAST:event_btCadFuncGeralActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        MenuFuncionario.getMenuFuncionario().setVisible(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        MenuFuncionario.getMenuFuncionario().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
+
     /**
      * @param args the command line arguments
      */
@@ -216,31 +211,32 @@ public class MenuClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCadastroFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCadastroFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCadastroFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCadastroFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuClientes().setVisible(true);
+                new MenuCadastroFuncionarios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCadCliente;
-    private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btListaClientes;
-    private javax.swing.JButton btSairMenuCliente;
+    private javax.swing.JButton btCadArq;
+    private javax.swing.JButton btCadEng;
+    private javax.swing.JButton btCadFuncGeral;
+    private javax.swing.JButton btSairMenuFunc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lbClientes;
+    private javax.swing.JLabel lbFunc;
     // End of variables declaration//GEN-END:variables
 }
