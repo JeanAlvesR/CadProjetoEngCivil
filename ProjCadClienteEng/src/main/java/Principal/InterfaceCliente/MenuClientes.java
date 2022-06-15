@@ -164,8 +164,8 @@ public class MenuClientes extends javax.swing.JFrame {
 
     private void btListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaClientesActionPerformed
 
-        ListaClientes.getListaClientes().setVisible(true);
-        ListaClientes.getListaClientes().listaTabela();
+        MenuListaClientes.getListaClientes().setVisible(true);
+        MenuListaClientes.getListaClientes().listaTabela();
 
     }//GEN-LAST:event_btListaClientesActionPerformed
 

@@ -187,9 +187,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairMenuFuncActionPerformed
 
     private void btListaFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaFuncActionPerformed
-
-        //ListaClientes.getListaClientes().setVisible(true);
-        //ListaClientes.getListaClientes().listaTabela();
+        MenuListaFuncionarios.getMenuListaFuncionarios().setVisible(true);
     }//GEN-LAST:event_btListaFuncActionPerformed
 
     /**

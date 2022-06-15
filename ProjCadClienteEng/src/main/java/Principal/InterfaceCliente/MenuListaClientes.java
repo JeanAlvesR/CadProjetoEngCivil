@@ -5,17 +5,17 @@ import Entidades.Cliente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class ListaClientes extends javax.swing.JFrame {
+public class MenuListaClientes extends javax.swing.JFrame {
 
-    private static ListaClientes listaClientes = null;
+    private static MenuListaClientes listaClientes = null;
 
-    private ListaClientes() {
+    private MenuListaClientes() {
         initComponents();
     }
 
-    public static ListaClientes getListaClientes() {
+    public static MenuListaClientes getListaClientes() {
         if (listaClientes == null) {
-            listaClientes = new ListaClientes();
+            listaClientes = new MenuListaClientes();
         }
         return listaClientes;
     }
@@ -153,20 +153,21 @@ public class ListaClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuListaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaClientes().setVisible(true);
+                new MenuListaClientes().setVisible(true);
             }
         });
     }

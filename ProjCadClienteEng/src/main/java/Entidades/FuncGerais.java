@@ -3,19 +3,19 @@ package Entidades;
 import java.util.Objects;
 public class FuncGerais implements Funcionario{
 
-    private String name;
+    private String nome;
     private String cpf;
     private Double horaTrabalhada;
     private final Double valorHora = 15.0;
 
     public FuncGerais(){
-        name = "";
+        nome = "";
         cpf = "";
         horaTrabalhada = 0.0;
     }
 
-    public FuncGerais(String name, String cpf, Double horaTrabalhada) {
-        this.name = name;
+    public FuncGerais(String nome, String cpf, Double horaTrabalhada) {
+        this.nome = nome;
         setCpf(cpf);
         this.horaTrabalhada = horaTrabalhada;
     }
@@ -24,12 +24,12 @@ public class FuncGerais implements Funcionario{
         return horaTrabalhada*valorHora;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -58,7 +58,7 @@ public class FuncGerais implements Funcionario{
     @Override
     public String toString() {
         return "FuncGerais{" +
-                "name='" + name + '\'' +
+                "name='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", horaTrabalhada=" + horaTrabalhada +
                 ", valorHora=" + valorHora +

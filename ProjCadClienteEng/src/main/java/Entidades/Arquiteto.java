@@ -4,19 +4,19 @@ import java.util.Objects;
 
 public class Arquiteto implements Funcionario{
 
-    private String name;
+    private String nome;
     private String codRegistro;
     private Double horaTrabalhada;
     private final Double valorHora = 20.0;
 
     public Arquiteto(){
-        name = "";
+        nome = "";
         codRegistro = "";
         horaTrabalhada = 0.0;
     }
 
-    public Arquiteto(String name, String codRegistro, Double horaTrabalhada) {
-        this.name = name;
+    public Arquiteto(String nome, String codRegistro, Double horaTrabalhada) {
+        this.nome = nome;
         setCodRegistro(codRegistro);
         this.horaTrabalhada = horaTrabalhada;
     }
@@ -25,12 +25,12 @@ public class Arquiteto implements Funcionario{
         return horaTrabalhada*valorHora;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCodRegistro() {
@@ -59,7 +59,7 @@ public class Arquiteto implements Funcionario{
     @Override
     public String toString() {
         return "Arquiteto{" +
-                "name='" + name + '\'' +
+                "name='" + nome + '\'' +
                 ", codRegistro='" + codRegistro + '\'' +
                 ", horaTrabalhada=" + horaTrabalhada +
                 ", valorHora=" + valorHora +

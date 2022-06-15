@@ -98,6 +98,9 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
             }
         });
 
+        btCadastrarCliente.setBackground(new java.awt.Color(102, 102, 102));
+        btCadastrarCliente.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btCadastrarCliente.setForeground(new java.awt.Color(255, 255, 255));
         btCadastrarCliente.setText("Cadastrar");
         btCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +108,9 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
             }
         });
 
+        btLimpar.setBackground(new java.awt.Color(102, 102, 102));
+        btLimpar.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +118,9 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
             }
         });
 
+        btSairCadClientes.setBackground(new java.awt.Color(102, 102, 102));
+        btSairCadClientes.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btSairCadClientes.setForeground(new java.awt.Color(255, 255, 255));
         btSairCadClientes.setText("Sair");
         btSairCadClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +159,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                         .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         Painel1Layout.setVerticalGroup(
             Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
