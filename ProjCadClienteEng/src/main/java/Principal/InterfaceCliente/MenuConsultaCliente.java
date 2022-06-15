@@ -25,7 +25,6 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lbConsultaCliente = new javax.swing.JLabel();
         lbTelefoneCli = new javax.swing.JLabel();
         lbEmailCli = new javax.swing.JLabel();
         lbCpfCli = new javax.swing.JLabel();
@@ -40,6 +39,8 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         btEditarCli = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
         btSairMenuConsultaCliente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lbConsultaCliente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Consulta Cliente");
@@ -54,28 +55,33 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        lbConsultaCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        lbConsultaCliente.setText("Consulta Cliente");
-
+        lbTelefoneCli.setForeground(new java.awt.Color(255, 255, 255));
         lbTelefoneCli.setText("Telefone:");
 
+        lbEmailCli.setForeground(new java.awt.Color(255, 255, 255));
         lbEmailCli.setText("Email:");
 
+        lbCpfCli.setForeground(new java.awt.Color(255, 255, 255));
         lbCpfCli.setText("CPF:");
 
+        lbNomeCli.setForeground(new java.awt.Color(255, 255, 255));
         lbNomeCli.setText("Nome:");
 
+        cxTelefoneCli.setForeground(new java.awt.Color(255, 255, 255));
         cxTelefoneCli.setText("...");
 
+        cxEmailCli.setForeground(new java.awt.Color(255, 255, 255));
         cxEmailCli.setText("...");
 
+        cxCpfCli.setForeground(new java.awt.Color(255, 255, 255));
         cxCpfCli.setText("...");
 
+        cxNomeCli.setForeground(new java.awt.Color(255, 255, 255));
         cxNomeCli.setText("...");
 
-        cxCpfBusca.setForeground(new java.awt.Color(153, 153, 153));
+        cxCpfBusca.setForeground(new java.awt.Color(51, 51, 51));
         cxCpfBusca.setText("Digite o CPF");
         cxCpfBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +89,9 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btConsultar.setBackground(new java.awt.Color(102, 102, 102));
+        btConsultar.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btConsultar.setForeground(new java.awt.Color(255, 255, 255));
         btConsultar.setText("Consultar");
         btConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +99,9 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btRemoverCli.setBackground(new java.awt.Color(102, 102, 102));
+        btRemoverCli.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btRemoverCli.setForeground(new java.awt.Color(255, 255, 255));
         btRemoverCli.setText("Remover");
         btRemoverCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +109,9 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btEditarCli.setBackground(new java.awt.Color(102, 102, 102));
+        btEditarCli.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btEditarCli.setForeground(new java.awt.Color(255, 255, 255));
         btEditarCli.setText("Editar");
         btEditarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +119,9 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btLimpar.setBackground(new java.awt.Color(102, 102, 102));
+        btLimpar.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +129,9 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btSairMenuConsultaCliente.setBackground(new java.awt.Color(102, 102, 102));
+        btSairMenuConsultaCliente.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btSairMenuConsultaCliente.setForeground(new java.awt.Color(255, 255, 255));
         btSairMenuConsultaCliente.setText("Sair");
         btSairMenuConsultaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,33 +144,30 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(lbConsultaCliente))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lbNomeCli)
                 .addGap(35, 35, 35)
-                .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lbCpfCli)
-                .addGap(48, 48, 48)
-                .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lbEmailCli)
-                .addGap(38, 38, 38)
-                .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(lbTelefoneCli)
-                .addGap(18, 18, 18)
-                .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btConsultar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbNomeCli)
+                            .addGap(35, 35, 35)
+                            .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbCpfCli)
+                            .addGap(48, 48, 48)
+                            .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbEmailCli)
+                            .addGap(38, 38, 38)
+                            .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addComponent(lbTelefoneCli)
+                            .addGap(18, 18, 18)
+                            .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btConsultar)))
                 .addGap(18, 18, 18)
                 .addComponent(btRemoverCli)
                 .addGap(18, 18, 18)
@@ -157,14 +175,13 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btLimpar)
                 .addGap(18, 18, 18)
-                .addComponent(btSairMenuConsultaCliente))
+                .addComponent(btSairMenuConsultaCliente)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lbConsultaCliente)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbNomeCli)
                     .addComponent(cxNomeCli))
@@ -180,7 +197,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbTelefoneCli)
                     .addComponent(cxTelefoneCli))
-                .addGap(82, 82, 82)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cxCpfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -190,7 +207,31 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                             .addComponent(btRemoverCli)
                             .addComponent(btEditarCli)
                             .addComponent(btLimpar)
-                            .addComponent(btSairMenuConsultaCliente)))))
+                            .addComponent(btSairMenuConsultaCliente))))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+
+        lbConsultaCliente.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
+        lbConsultaCliente.setForeground(new java.awt.Color(255, 255, 255));
+        lbConsultaCliente.setText("Consulta Cliente");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addComponent(lbConsultaCliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(lbConsultaCliente)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,10 +239,14 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -373,6 +418,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel cxNomeCli;
     private javax.swing.JLabel cxTelefoneCli;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbConsultaCliente;
     private javax.swing.JLabel lbCpfCli;
     private javax.swing.JLabel lbEmailCli;

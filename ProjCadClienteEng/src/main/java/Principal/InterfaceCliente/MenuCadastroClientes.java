@@ -25,21 +25,21 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         Painel1 = new javax.swing.JPanel();
-        btSairCadClientes = new javax.swing.JButton();
-        lbCadastroCliente = new javax.swing.JLabel();
-        lbNomeCli = new javax.swing.JLabel();
-        lbCpfCli = new javax.swing.JLabel();
-        btCadastrarCliente = new javax.swing.JButton();
-        btLimpar = new javax.swing.JButton();
-        cxNomeCli = new javax.swing.JTextField();
-        cxCpfCli = new javax.swing.JTextField();
+        cxTelefoneCli = new javax.swing.JTextField();
+        lbTelefoneCli = new javax.swing.JLabel();
         lbEmailCli = new javax.swing.JLabel();
         cxEmailCli = new javax.swing.JTextField();
-        lbTelefoneCli = new javax.swing.JLabel();
-        cxTelefoneCli = new javax.swing.JTextField();
+        cxCpfCli = new javax.swing.JTextField();
+        lbCpfCli = new javax.swing.JLabel();
+        lbNomeCli = new javax.swing.JLabel();
+        cxNomeCli = new javax.swing.JTextField();
+        btCadastrarCliente = new javax.swing.JButton();
+        btLimpar = new javax.swing.JButton();
+        btSairCadClientes = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lbCadastroCliente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Clientes");
@@ -54,54 +54,49 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 formWindowClosed(evt);
             }
         });
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        Painel1.setBackground(new java.awt.Color(255, 255, 255));
-        Painel1.setLayout(new java.awt.GridBagLayout());
+        Painel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        btSairCadClientes.setText("Sair");
-        btSairCadClientes.addActionListener(new java.awt.event.ActionListener() {
+        cxTelefoneCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSairCadClientesActionPerformed(evt);
+                cxTelefoneCliActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(35, 10, 0, 0);
-        Painel1.add(btSairCadClientes, gridBagConstraints);
 
-        lbCadastroCliente.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        lbCadastroCliente.setText("Cadastro Cliente");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 0, 0, 0);
-        Painel1.add(lbCadastroCliente, gridBagConstraints);
+        lbTelefoneCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbTelefoneCli.setForeground(new java.awt.Color(255, 255, 255));
+        lbTelefoneCli.setText("Telefone: ");
 
-        lbNomeCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        lbNomeCli.setText("Nome: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(39, 20, 0, 0);
-        Painel1.add(lbNomeCli, gridBagConstraints);
+        lbEmailCli.setBackground(new java.awt.Color(255, 255, 255));
+        lbEmailCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbEmailCli.setForeground(new java.awt.Color(255, 255, 255));
+        lbEmailCli.setText("Email: ");
+
+        cxEmailCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxEmailCliActionPerformed(evt);
+            }
+        });
+
+        cxCpfCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxCpfCliActionPerformed(evt);
+            }
+        });
 
         lbCpfCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbCpfCli.setForeground(new java.awt.Color(255, 255, 255));
         lbCpfCli.setText("CPF: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
-        Painel1.add(lbCpfCli, gridBagConstraints);
+
+        lbNomeCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        lbNomeCli.setForeground(new java.awt.Color(255, 255, 255));
+        lbNomeCli.setText("Nome: ");
+
+        cxNomeCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cxNomeCliActionPerformed(evt);
+            }
+        });
 
         btCadastrarCliente.setText("Cadastrar");
         btCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -109,12 +104,6 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btCadastrarClienteActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(35, 20, 0, 0);
-        Painel1.add(btCadastrarCliente, gridBagConstraints);
 
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,100 +111,120 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
                 btLimparActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(35, 12, 0, 0);
-        Painel1.add(btLimpar, gridBagConstraints);
 
-        cxNomeCli.addActionListener(new java.awt.event.ActionListener() {
+        btSairCadClientes.setText("Sair");
+        btSairCadClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxNomeCliActionPerformed(evt);
+                btSairCadClientesActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 30, 0, 0);
-        Painel1.add(cxNomeCli, gridBagConstraints);
 
-        cxCpfCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxCpfCliActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 30, 0, 0);
-        Painel1.add(cxCpfCli, gridBagConstraints);
+        javax.swing.GroupLayout Painel1Layout = new javax.swing.GroupLayout(Painel1);
+        Painel1.setLayout(Painel1Layout);
+        Painel1Layout.setHorizontalGroup(
+            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Painel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(btCadastrarCliente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btLimpar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btSairCadClientes))
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addComponent(lbEmailCli)
+                        .addGap(51, 51, 51)
+                        .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addComponent(lbTelefoneCli)
+                        .addGap(30, 30, 30)
+                        .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+        Painel1Layout.setVerticalGroup(
+            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Painel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cxNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNomeCli))
+                .addGap(18, 18, 18)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cxCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbCpfCli))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(lbEmailCli))
+                    .addComponent(cxEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(lbTelefoneCli))
+                    .addComponent(cxTelefoneCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btLimpar)
+                    .addComponent(btSairCadClientes)
+                    .addComponent(btCadastrarCliente))
+                .addGap(21, 21, 21))
+        );
 
-        lbEmailCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        lbEmailCli.setText("Email: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(28, 20, 0, 0);
-        Painel1.add(lbEmailCli, gridBagConstraints);
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
-        cxEmailCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxEmailCliActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 30, 0, 0);
-        Painel1.add(cxEmailCli, gridBagConstraints);
+        lbCadastroCliente.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
+        lbCadastroCliente.setForeground(new java.awt.Color(255, 255, 255));
+        lbCadastroCliente.setText("Cadastro Cliente");
 
-        lbTelefoneCli.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        lbTelefoneCli.setText("Telefone: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 20, 0, 0);
-        Painel1.add(lbTelefoneCli, gridBagConstraints);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(lbCadastroCliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(lbCadastroCliente)
+                .addGap(22, 22, 22))
+        );
 
-        cxTelefoneCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxTelefoneCliActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(25, 30, 0, 0);
-        Painel1.add(cxTelefoneCli, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 33;
-        gridBagConstraints.ipady = 25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        getContentPane().add(Painel1, gridBagConstraints);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Painel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Painel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -346,6 +355,7 @@ public class MenuCadastroClientes extends javax.swing.JFrame {
     private javax.swing.JTextField cxEmailCli;
     private javax.swing.JTextField cxNomeCli;
     private javax.swing.JTextField cxTelefoneCli;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbCadastroCliente;
     private javax.swing.JLabel lbCpfCli;
     private javax.swing.JLabel lbEmailCli;
