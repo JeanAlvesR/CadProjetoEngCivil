@@ -1,8 +1,10 @@
 package Principal.IntefaceFuncionario;
 
 import Controler.Controlador;
+import Entidades.Arquiteto;
 import Entidades.Cliente;
 import Entidades.Engenheiro;
+import Entidades.FuncGerais;
 import Entidades.Funcionario;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -10,18 +12,18 @@ import javax.swing.table.DefaultTableModel;
 public class MenuListaFuncionarios extends javax.swing.JFrame {
 
     private static MenuListaFuncionarios menuListaFuncionarios = null;
-    
+
     private MenuListaFuncionarios() {
         initComponents();
     }
-    
-    public static MenuListaFuncionarios getMenuListaFuncionarios(){
-        if(menuListaFuncionarios == null){
+
+    public static MenuListaFuncionarios getMenuListaFuncionarios() {
+        if (menuListaFuncionarios == null) {
             menuListaFuncionarios = new MenuListaFuncionarios();
         }
         return menuListaFuncionarios;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,6 +35,12 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
         lbEng = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbEng = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbArq = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbFunc = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Lista de Funcionários");
@@ -58,16 +66,16 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+                .addGap(97, 97, 97)
                 .addComponent(lbFunc)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(lbFunc)
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -91,10 +99,36 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "CREA"
+                "Nome", "CREA", "Sálario Total"
             }
         ));
         jScrollPane1.setViewportView(tbEng);
+
+        tbArq.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Código Registro", "Salário Total"
+            }
+        ));
+        jScrollPane2.setViewportView(tbArq);
+
+        tbFunc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "CPF", "Salário Total"
+            }
+        ));
+        jScrollPane3.setViewportView(tbFunc);
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ARQUITETOS");
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("FUNCIONÁRIOS GERAIS");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,12 +136,17 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btSairMenuFunc)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbEng)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbEng)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btSairMenuFunc)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel2))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,9 +155,17 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
                 .addComponent(lbEng)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btSairMenuFunc)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,23 +201,35 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
         MenuFuncionario.getMenuFuncionario().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    public void sair(){
+    public void sair() {
         this.dispose();
     }
-    
-    public void listaTabelas(){
-    DefaultTableModel modelo = (DefaultTableModel) tbEng.getModel();
-        int posLin = 0;
-        modelo.setRowCount(posLin);
-        //for alternativo  
-        for (Funcionario eng : Controlador.getControlador().getServico().funcionarioList()) {
-            modelo.insertRow(posLin, new Object[]{((Engenheiro)eng).getNome(), ((Engenheiro)eng).getCrea()});
-            posLin++;
 
+    public void listaTabelas() {
+        DefaultTableModel modelo = (DefaultTableModel) tbEng.getModel();
+        DefaultTableModel modelo1 = (DefaultTableModel) tbArq.getModel();
+        DefaultTableModel modelo2 = (DefaultTableModel) tbFunc.getModel();
+        int posLin = 0;
+        int posLin1 = 0;
+        int posLin2 = 0;
+        modelo.setRowCount(posLin);
+        modelo1.setRowCount(posLin1);
+        modelo2.setRowCount(posLin2);
+        //for alternativo  
+        for (Funcionario func : Controlador.getControlador().getServico().funcionarioList()) {
+            if (func.getClass() == new Engenheiro().getClass()) {
+                modelo.insertRow(posLin, new Object[]{((Engenheiro) func).getNome(), ((Engenheiro) func).getCrea(), ((Engenheiro) func).getSalario()});
+                posLin++;
+            } else if (func.getClass() == new Arquiteto().getClass()) {
+                modelo1.insertRow(posLin1, new Object[]{((Arquiteto) func).getNome(), ((Arquiteto) func).getCodRegistro(), ((Arquiteto) func).getSalario()});
+                posLin1++;
+            } else {
+                modelo2.insertRow(posLin2, new Object[]{((FuncGerais) func).getNome(), ((FuncGerais) func).getCpf(), ((FuncGerais) func).getSalario()});
+                posLin2++;
+            }
         }
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -208,11 +267,17 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSairMenuFunc;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lbEng;
     private javax.swing.JLabel lbFunc;
+    private javax.swing.JTable tbArq;
     private javax.swing.JTable tbEng;
+    private javax.swing.JTable tbFunc;
     // End of variables declaration//GEN-END:variables
 }
