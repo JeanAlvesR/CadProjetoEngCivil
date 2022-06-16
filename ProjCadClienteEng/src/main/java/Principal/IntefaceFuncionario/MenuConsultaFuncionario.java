@@ -2,8 +2,11 @@ package Principal.IntefaceFuncionario;
 
 import Controler.Controlador;
 import Entidades.Arquiteto;
+import Entidades.Cliente;
 import Entidades.Engenheiro;
 import Entidades.FuncGerais;
+import Entidades.Funcionario;
+import Servico.Exceptions.RemoveException;
 import javax.swing.JOptionPane;
 
 public class MenuConsultaFuncionario extends javax.swing.JFrame {
@@ -328,13 +331,13 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverActionPerformed
-        /*   int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmação de remoção", JOptionPane.YES_NO_OPTION);
+    int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmação de remoção", JOptionPane.YES_NO_OPTION);
 
         if (resp == 0) {
             remover();
             limpar();
         }
-        */
+       
     }//GEN-LAST:event_btRemoverActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -413,6 +416,48 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
         
     }
 
+    public boolean remover(){
+        
+        if (cxCodIdentificador.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
+            return false;
+        }
+        
+        Funcionario func = null;
+        
+        switch (((String) opcFunc.getSelectedItem())) {
+
+            case "Engenheiro":
+                Engenheiro eng = new Engenheiro();
+                eng.setCrea(cxCodIdentificador.getText());
+                func = eng;                
+                break;
+
+            case "Arquiteto":
+                Arquiteto arq = new Arquiteto();
+                arq.setCodRegistro(cxCodIdentificador.getText());
+                func = arq;                
+                break;
+
+            case "Funcionário Geral":
+                FuncGerais funcGerais = new FuncGerais();
+                funcGerais.setCpf(cxCodIdentificador.getText());
+                func = funcGerais;               
+                break;
+        }
+        
+        try {
+            Controlador.getControlador().getServico().removeFuncionario(func);
+            JOptionPane.showMessageDialog(null, "Funcionário removido com sucesso!", "Removido", 1);
+        } catch (RemoveException re) {
+            JOptionPane.showMessageDialog(null, "Funcionário não encontrado!", "ERROR", 0);
+            return false;
+        }
+
+        return true;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
