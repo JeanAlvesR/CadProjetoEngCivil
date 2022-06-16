@@ -172,7 +172,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-        //MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
+        MenuConsultaFuncionario.getMenuConsultaFuncionario().setVisible(true);
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadActionPerformed

@@ -78,6 +78,11 @@ public class MenuCadastroFuncionarios extends javax.swing.JFrame {
                 opcFuncItemStateChanged(evt);
             }
         });
+        opcFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcFuncActionPerformed(evt);
+            }
+        });
 
         btCadastrarFunc.setBackground(new java.awt.Color(102, 102, 102));
         btCadastrarFunc.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
@@ -262,6 +267,10 @@ public class MenuCadastroFuncionarios extends javax.swing.JFrame {
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         limpar();
     }//GEN-LAST:event_btLimparActionPerformed
+
+    private void opcFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcFuncActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcFuncActionPerformed
 
     public void limpar() {
         cxNomeFunc.setText("");
