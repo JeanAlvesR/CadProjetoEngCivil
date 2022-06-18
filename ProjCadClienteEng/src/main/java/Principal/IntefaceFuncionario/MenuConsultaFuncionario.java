@@ -2,7 +2,6 @@ package Principal.IntefaceFuncionario;
 
 import Controler.Controlador;
 import Entidades.Arquiteto;
-import Entidades.Cliente;
 import Entidades.Engenheiro;
 import Entidades.FuncGerais;
 import Entidades.Funcionario;
@@ -12,18 +11,18 @@ import javax.swing.JOptionPane;
 public class MenuConsultaFuncionario extends javax.swing.JFrame {
 
     private static MenuConsultaFuncionario menuConsultaFuncionario = null;
-    
+
     private MenuConsultaFuncionario() {
         initComponents();
     }
 
-    public static MenuConsultaFuncionario getMenuConsultaFuncionario(){
-        if(menuConsultaFuncionario == null){
+    public static MenuConsultaFuncionario getMenuConsultaFuncionario() {
+        if (menuConsultaFuncionario == null) {
             menuConsultaFuncionario = new MenuConsultaFuncionario();
         }
         return menuConsultaFuncionario;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -294,16 +293,16 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
         switch ((String) opcFunc.getSelectedItem()) {
 
             case "Engenheiro":
-            lbCod.setText("CREA:");
-            break;
+                lbCod.setText("CREA:");
+                break;
 
             case "Arquiteto":
-            lbCod.setText("Código Registro:");
-            break;
+                lbCod.setText("Código Registro:");
+                break;
 
             case "Funcionário Geral":
-            lbCod.setText("CPF:");
-            break;
+                lbCod.setText("CPF:");
+                break;
         }
     }//GEN-LAST:event_opcFuncItemStateChanged
 
@@ -320,24 +319,27 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        /*  Cliente cliente = verificaCliente();
-        if (cliente == null) {
-            JOptionPane.showMessageDialog(null, "O cliente não existe!", "ERROR", 0);
+        Funcionario func = null;
+
+        func = verificaFuncionario();
+
+        if (func == null) {
+            JOptionPane.showMessageDialog(null, "O funcionário não existe!", "ERROR", 0);
 
         } else {
-            MenuAtualizarCliente.getMenuAtualizarCliente().setVisible(true);
-            MenuAtualizarCliente.getMenuAtualizarCliente().impDados(cliente);
-        }*/
+            //MenuAtualizarCliente.getMenuAtualizarCliente().setVisible(true);
+            //MenuAtualizarCliente.getMenuAtualizarCliente().impDados(cliente);
+        }
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverActionPerformed
-    int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmação de remoção", JOptionPane.YES_NO_OPTION);
+        int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Confirmação de remoção", JOptionPane.YES_NO_OPTION);
 
         if (resp == 0) {
             remover();
             limpar();
         }
-       
+
     }//GEN-LAST:event_btRemoverActionPerformed
 
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
@@ -347,6 +349,58 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
     private void cxCodIdentificadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxCodIdentificadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cxCodIdentificadorActionPerformed
+
+    public Funcionario verificaFuncionario() {
+        if (cxCodIdentificador.getText().isEmpty()) {
+            return null;
+        }
+        Funcionario func = null;
+        switch ((String) opcFunc.getSelectedItem()) {
+
+            case "Engenheiro":
+                Engenheiro eng = new Engenheiro();
+                eng.setCrea(cxCodIdentificador.getText());
+                func = eng;
+                break;
+
+            case "Arquiteto":
+                Arquiteto arq = new Arquiteto();
+                arq.setCodRegistro(cxCodIdentificador.getText());
+                func = arq;
+                break;
+
+            case "Funcionário Geral":
+                FuncGerais funcGerais = new FuncGerais();
+                funcGerais.setCpf(cxCodIdentificador.getText());
+                func = funcGerais;
+                break;
+        }
+        func = Controlador.getControlador().getServico().consultaFuncionario(func);
+        return func;
+    }
+
+    public void consultaAtualizada(Funcionario func) {
+        if (func.getClass() == new Engenheiro().getClass()) {
+            cxNome.setText(((Engenheiro) func).getNome());
+            lbCod.setText("CREA:");
+            cxCod.setText(((Engenheiro) func).getCrea());
+            cxHT.setText(((Engenheiro) func).getHoraTrabalhada().toString());
+            cxTotalSalario.setText(((Engenheiro) func).getSalario().toString());
+        } else if (func.getClass() == new Arquiteto().getClass()) {
+            cxNome.setText(((Arquiteto) func).getNome());
+            lbCod.setText("Código Registro:");
+            cxCod.setText(((Arquiteto) func).getCodRegistro());
+            cxHT.setText(((Arquiteto) func).getHoraTrabalhada().toString());
+            cxTotalSalario.setText(((Arquiteto) func).getSalario().toString());
+        } else {
+            cxNome.setText(((FuncGerais) func).getNome());
+            lbCod.setText("CPF:");
+            cxCod.setText(((FuncGerais) func).getCpf());
+            cxHT.setText(((FuncGerais) func).getHoraTrabalhada().toString());
+            cxTotalSalario.setText(((FuncGerais) func).getSalario().toString());
+        }
+
+    }
 
     public void limpar() {
         cxNome.setText("...");
@@ -413,39 +467,39 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
 
                 break;
         }
-        
+
     }
 
-    public boolean remover(){
-        
+    public boolean remover() {
+
         if (cxCodIdentificador.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
             return false;
         }
-        
+
         Funcionario func = null;
-        
+
         switch (((String) opcFunc.getSelectedItem())) {
 
             case "Engenheiro":
                 Engenheiro eng = new Engenheiro();
                 eng.setCrea(cxCodIdentificador.getText());
-                func = eng;                
+                func = eng;
                 break;
 
             case "Arquiteto":
                 Arquiteto arq = new Arquiteto();
                 arq.setCodRegistro(cxCodIdentificador.getText());
-                func = arq;                
+                func = arq;
                 break;
 
             case "Funcionário Geral":
                 FuncGerais funcGerais = new FuncGerais();
                 funcGerais.setCpf(cxCodIdentificador.getText());
-                func = funcGerais;               
+                func = funcGerais;
                 break;
         }
-        
+
         try {
             Controlador.getControlador().getServico().removeFuncionario(func);
             JOptionPane.showMessageDialog(null, "Funcionário removido com sucesso!", "Removido", 1);
@@ -456,8 +510,7 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
 
         return true;
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
