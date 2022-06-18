@@ -105,6 +105,9 @@ public class ProjServico {
 
     public void atualizaFuncionario(Funcionario funcionario) throws AtualizaException {
         boolean aux= true;
+        if(funcionario == null){
+            throw new AtualizaException();
+        }
         for(int i = 0; i< bd.getFuncionarios().size(); i++){
             if(funcionario.equals(bd.getFuncionarios().get(i))){
                 bd.getFuncionarios().set(i, funcionario);

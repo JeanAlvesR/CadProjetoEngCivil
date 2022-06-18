@@ -49,7 +49,6 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Consulta Funcionário");
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -327,8 +326,8 @@ public class MenuConsultaFuncionario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O funcionário não existe!", "ERROR", 0);
 
         } else {
-            //MenuAtualizarCliente.getMenuAtualizarCliente().setVisible(true);
-            //MenuAtualizarCliente.getMenuAtualizarCliente().impDados(cliente);
+            MenuAtualizarFuncionario.getMenuAtualizarFuncionario().setVisible(true);
+            MenuAtualizarFuncionario.getMenuAtualizarFuncionario().impDados(func);
         }
     }//GEN-LAST:event_btEditarActionPerformed
 
