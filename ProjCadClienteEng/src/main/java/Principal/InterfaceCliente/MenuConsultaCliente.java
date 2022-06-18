@@ -2,6 +2,7 @@ package Principal.InterfaceCliente;
 
 import Controler.Controlador;
 import Entidades.Cliente;
+import Principal.IntefaceProjeto.MenuProjetos;
 import Servico.Exceptions.RemoveException;
 import javax.swing.JOptionPane;
 
@@ -39,6 +40,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         btEditarCli = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
         btSairMenuConsultaCliente = new javax.swing.JButton();
+        btProj = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lbConsultaCliente = new javax.swing.JLabel();
 
@@ -139,6 +141,16 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
             }
         });
 
+        btProj.setBackground(new java.awt.Color(102, 102, 102));
+        btProj.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btProj.setForeground(new java.awt.Color(255, 255, 255));
+        btProj.setText("Projetos");
+        btProj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btProjActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -169,14 +181,16 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btConsultar)))
                 .addGap(18, 18, 18)
-                .addComponent(btRemoverCli)
+                .addComponent(btProj)
                 .addGap(18, 18, 18)
                 .addComponent(btEditarCli)
                 .addGap(18, 18, 18)
+                .addComponent(btRemoverCli)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(btLimpar)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btSairMenuConsultaCliente)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +203,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbCpfCli)
                     .addComponent(cxCpfCli))
-                .addGap(23, 23, 23)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbEmailCli)
                     .addComponent(cxEmailCli))
@@ -203,11 +217,14 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btConsultar)
-                            .addComponent(btRemoverCli)
-                            .addComponent(btEditarCli)
-                            .addComponent(btLimpar)
-                            .addComponent(btSairMenuConsultaCliente))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btConsultar)
+                                .addComponent(btProj)
+                                .addComponent(btEditarCli))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btSairMenuConsultaCliente)
+                                .addComponent(btLimpar)
+                                .addComponent(btRemoverCli)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -221,17 +238,17 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbConsultaCliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(239, 239, 239))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(lbConsultaCliente)
-                .addGap(24, 24, 24))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -301,6 +318,32 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
         MenuClientes.getMenuClientes().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
+    private void btProjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProjActionPerformed
+        openProj();
+    }//GEN-LAST:event_btProjActionPerformed
+
+    public boolean openProj(){
+    
+        if (cxCpfBusca.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
+            return false;
+        }
+        
+        Cliente cliente = new Cliente();
+        cliente.setCpf(cxCpfBusca.getText());
+        cliente = Controlador.getControlador().getServico().consultaCliente(cliente);
+        if(cliente!= null){
+            MenuProjetos.getMenuProjetos().insereDadosCliente(cliente);
+            MenuProjetos.getMenuProjetos().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "O cliente não está cadastrado!", "ERROR", 0);
+            return false;
+        }
+        return true;
+    }
+     
+    
     public void sair(){
         this.dispose();
     }
@@ -410,6 +453,7 @@ public class MenuConsultaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btConsultar;
     private javax.swing.JButton btEditarCli;
     private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btProj;
     private javax.swing.JButton btRemoverCli;
     private javax.swing.JButton btSairMenuConsultaCliente;
     private javax.swing.JTextField cxCpfBusca;

@@ -1,7 +1,4 @@
 package Entidades;
-
-import Entidades.enums.ProjetoStatus;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +13,6 @@ public class Projeto {
     private Date dataInicial;
     private Date dataFinal;
 
-    private ProjetoStatus projetoStatus;
     private DetalhesProjeto detalhesProjeto;
 
     private List<Funcionario> funcionarios = new ArrayList<>();
@@ -29,13 +25,12 @@ public class Projeto {
         dataFinal = new Date();
     }
 
-    public Projeto(Integer codigoId, String nome, Double gastoFuncionarios, Date dataInicial, Date dataFinal, ProjetoStatus projetoStatus, DetalhesProjeto detalhesProjeto) {
+    public Projeto(Integer codigoId, String nome, Double gastoFuncionarios, Date dataInicial, Date dataFinal, DetalhesProjeto detalhesProjeto) {
         this.codigoId = codigoId;
         this.nome = nome;
         this.gastoFuncionarios = gastoFuncionarios;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
-        this.projetoStatus = projetoStatus;
         this.detalhesProjeto = detalhesProjeto;
     }
 
@@ -83,14 +78,6 @@ public class Projeto {
         this.dataFinal = dataFinal;
     }
 
-    public ProjetoStatus getProjetoStatus() {
-        return projetoStatus;
-    }
-
-    public void setProjetoStatus(ProjetoStatus projetoStatus) {
-        this.projetoStatus = projetoStatus;
-    }
-
     public DetalhesProjeto getDetalhesProjeto() {
         return detalhesProjeto;
     }
@@ -116,7 +103,6 @@ public class Projeto {
                 ", gastoFuncionarios=" + getGastoFuncionarios() +
                 ", dataInicial=" + sdf1.format(dataInicial) +
                 ", dataFinal=" + sdf1.format(dataFinal) +
-                ", projetoStatus=" + projetoStatus +
                 ", detalhesProjeto=" + detalhesProjeto +
                 ", funcionarios=" + funcionarios +
                 '}';
