@@ -62,6 +62,7 @@ public class DetalhesProjeto {
     }
 
     public Float getAreaTotal() {
+        areaTotal = largura * comprimento;
         return areaTotal;
     }
 

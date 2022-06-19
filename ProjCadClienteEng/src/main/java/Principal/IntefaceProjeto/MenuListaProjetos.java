@@ -241,6 +241,7 @@ public class MenuListaProjetos extends javax.swing.JFrame {
            cliente.setNome(cxNome.getText());
            cliente.setCpf(cxCpf.getText());
            MenuConsultaProjeto.getMenuConsultaProjeto().insereDadosProj(cliente, pj);
+           MenuConsultaProjeto.getMenuConsultaProjeto().setVisible(true);
        }
        
     }//GEN-LAST:event_btConsultaActionPerformed

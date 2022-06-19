@@ -96,6 +96,14 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         setTitle("Menu Consulta Projeto");
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setLocationByPlatform(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -393,7 +401,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                             .addComponent(lbLargura)
                             .addComponent(cxLargura))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbInclinacao)
                             .addComponent(cxInclinacao)))
                     .addComponent(lbDetalhesProjeto))
@@ -444,7 +452,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        Funcionario func = null;
+    /*    Funcionario func = null;
 
         func = verificaFuncionario();
 
@@ -454,16 +462,27 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         } else {
             MenuAtualizarFuncionario.getMenuAtualizarFuncionario().setVisible(true);
             MenuAtualizarFuncionario.getMenuAtualizarFuncionario().impDados(func);
-        }
+        }*/
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btSairMenuConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairMenuConsultaClienteActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Confirmação de saída", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
-            limpar();
             sair();
         }
     }//GEN-LAST:event_btSairMenuConsultaClienteActionPerformed
+
+    public void sair(){
+        this.dispose();
+    }
+    
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        MenuListaProjetos.getMenuListaProjetos().setVisible(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        MenuListaProjetos.getMenuListaProjetos().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -507,28 +526,16 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
     private javax.swing.JLabel cxBairro;
     private javax.swing.JLabel cxCep;
     private javax.swing.JLabel cxCidade;
-    private javax.swing.JLabel cxCod;
-    private javax.swing.JLabel cxCod1;
-    private javax.swing.JTextField cxCodIdentificador;
-    private javax.swing.JTextField cxCodIdentificador1;
     private javax.swing.JLabel cxCodigo;
     private javax.swing.JLabel cxComprimento;
     private javax.swing.JLabel cxCpfCliente;
-    private javax.swing.JLabel cxHT;
-    private javax.swing.JLabel cxHT1;
     private javax.swing.JLabel cxInclinacao;
     private javax.swing.JLabel cxLargura;
-    private javax.swing.JLabel cxNome;
-    private javax.swing.JLabel cxNome1;
     private javax.swing.JLabel cxNomeCliente;
     private javax.swing.JLabel cxNomeProj;
     private javax.swing.JLabel cxNum;
     private javax.swing.JLabel cxRua;
     private javax.swing.JLabel cxTipoSolo;
-    private javax.swing.JLabel cxTotalSalario;
-    private javax.swing.JLabel cxTotalSalario1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lbArea;
@@ -537,25 +544,17 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
     private javax.swing.JLabel lbCep;
     private javax.swing.JLabel lbCidade;
     private javax.swing.JLabel lbCliente;
-    private javax.swing.JLabel lbCod;
-    private javax.swing.JLabel lbCod1;
     private javax.swing.JLabel lbCodigoId;
     private javax.swing.JLabel lbComprimento;
     private javax.swing.JLabel lbConsulta;
     private javax.swing.JLabel lbDetalhesProjeto;
     private javax.swing.JLabel lbDetalhesProjeto1;
     private javax.swing.JLabel lbEndereco;
-    private javax.swing.JLabel lbHT;
-    private javax.swing.JLabel lbHT1;
     private javax.swing.JLabel lbInclinacao;
     private javax.swing.JLabel lbLargura;
-    private javax.swing.JLabel lbNome;
-    private javax.swing.JLabel lbNome1;
     private javax.swing.JLabel lbNome2;
     private javax.swing.JLabel lbNum;
     private javax.swing.JLabel lbRua;
     private javax.swing.JLabel lbTipoSolo;
-    private javax.swing.JLabel lbToltalSalario;
-    private javax.swing.JLabel lbToltalSalario1;
     // End of variables declaration//GEN-END:variables
 }
