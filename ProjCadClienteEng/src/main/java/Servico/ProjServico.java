@@ -70,8 +70,7 @@ public class ProjServico {
     //-------------------------------------------------> Funcionarios
 
     public Funcionario consultaFuncionario(Funcionario funcionario) {
-        List<Funcionario> listAux = null;
-
+        
         if (bd.getFuncionarios().isEmpty()) {
             return null;
         }

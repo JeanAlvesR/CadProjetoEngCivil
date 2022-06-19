@@ -5,6 +5,8 @@
 package Principal.IntefaceProjeto;
 
 import Entidades.Cliente;
+import Entidades.DetalhesProjeto;
+import Entidades.Endereco;
 import Entidades.Projeto;
 import javax.swing.JOptionPane;
 
@@ -45,6 +47,43 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         cxCidade.setText(pj.getDetalhesProjeto().getEndereco().getCidade());
     }
     
+    public Cliente capturaCliente(){
+    
+        Cliente cliente = new Cliente();
+        cliente.setNome(cxNomeCliente.getText());
+        cliente.setCpf(cxCpfCliente.getText());
+        
+        Projeto projeto = new Projeto();
+        projeto.setNome(cxNomeProj.getText());
+        projeto.setCodigoId(cxCodigo.getText());
+        
+        DetalhesProjeto dp = new DetalhesProjeto();
+        
+        try{
+            dp.setComprimento(Float.parseFloat(cxComprimento.getText()));
+            dp.setLargura(Float.parseFloat(cxLargura.getText()));
+            dp.setInclinacao(Float.parseFloat(cxInclinacao.getText()));
+            dp.setTipoSolo((cxTipoSolo.getText()));
+        }catch(NumberFormatException nfe){
+            JOptionPane.showConfirmDialog(null, "O comprimento, inclinação e largura precisam ser números e separados por ponto!","Error",0);
+            return null;
+        }
+
+        Endereco end = new Endereco();
+        end.setRua(cxRua.getText());
+        end.setNum(cxNum.getText());
+        end.setBairro(cxBairro.getText());
+        end.setCep(cxCep.getText());
+        end.setCidade(cxCidade.getText());
+        
+        dp.setEndereco(end);
+        projeto.setDetalhesProjeto(dp);
+        
+        cliente.addProjeto(projeto);
+        
+        
+        return cliente;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -283,17 +322,16 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(lbNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cxNomeProj, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(cxCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addComponent(lbDetalhesProjeto)))
+                                .addComponent(lbDetalhesProjeto))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(lbNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cxCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cxNomeProj, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -372,7 +410,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbRua)
-                    .addComponent(cxCodigo)
+                    .addComponent(cxCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxRua))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -417,7 +455,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSairMenuConsultaCliente)
                     .addComponent(btEditar))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(15, 15, 15)
@@ -452,17 +490,9 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-    /*    Funcionario func = null;
-
-        func = verificaFuncionario();
-
-        if (func == null) {
-            JOptionPane.showMessageDialog(null, "O funcionário não existe!", "ERROR", 0);
-
-        } else {
-            MenuAtualizarFuncionario.getMenuAtualizarFuncionario().setVisible(true);
-            MenuAtualizarFuncionario.getMenuAtualizarFuncionario().impDados(func);
-        }*/
+        Cliente cliente = capturaCliente();
+        MenuAtualizarProjeto.getMenuAtualizarProjeto().insereDadosProj(cliente, cliente.getProjetos().get(0));
+        MenuAtualizarProjeto.getMenuAtualizarProjeto().setVisible(true);
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btSairMenuConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairMenuConsultaClienteActionPerformed

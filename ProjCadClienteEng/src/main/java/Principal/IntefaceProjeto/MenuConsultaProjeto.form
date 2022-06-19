@@ -103,19 +103,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lbNome2" min="-2" pref="65" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="cxNomeProj" min="-2" pref="122" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                                  <Component id="cxCodigo" min="-2" pref="122" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="lbComprimento" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                   <Component id="lbDetalhesProjeto" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbNome2" min="-2" pref="65" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cxCodigo" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="cxNomeProj" min="-2" pref="122" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace pref="118" max="32767" attributes="0"/>
@@ -220,7 +219,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbRua" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cxCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cxCodigo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="cxRua" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -277,7 +276,7 @@
                       <Component id="btSairMenuConsultaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="7" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">

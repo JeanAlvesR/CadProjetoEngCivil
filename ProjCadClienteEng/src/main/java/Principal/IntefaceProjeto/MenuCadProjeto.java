@@ -507,7 +507,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
     public boolean cadastrar() {
 
         if (cxCodigoProj.getText().isEmpty()) {
-            JOptionPane.showConfirmDialog(null, "O código precisa existir!", "ERROR", 0);
+            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
             cxCodigoProj.requestFocus();
             return false;
         }
