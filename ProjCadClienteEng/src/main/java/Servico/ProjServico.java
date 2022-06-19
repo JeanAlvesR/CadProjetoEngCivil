@@ -2,7 +2,10 @@
 package Servico;
 
 import BD.BdAplicacao;
+import Entidades.Arquiteto;
 import Entidades.Cliente;
+import Entidades.Engenheiro;
+import Entidades.FuncGerais;
 import Entidades.Funcionario;
 import Entidades.Projeto;
 import Servico.Exceptions.AtualizaException;
@@ -103,13 +106,30 @@ public class ProjServico {
     }
 
     public void atualizaFuncionario(Funcionario funcionario) throws AtualizaException {
+        
         boolean aux= true;
         if(funcionario == null){
             throw new AtualizaException();
         }
         for(int i = 0; i< bd.getFuncionarios().size(); i++){
             if(funcionario.equals(bd.getFuncionarios().get(i))){
-                bd.getFuncionarios().set(i, funcionario);
+                
+                if(funcionario.getClass() == new Engenheiro().getClass()){
+                    ((Engenheiro)bd.getFuncionarios().get(i)).setNome(((Engenheiro)funcionario).getNome());
+                    ((Engenheiro)bd.getFuncionarios().get(i)).setCrea(((Engenheiro)funcionario).getCrea());
+                    ((Engenheiro)bd.getFuncionarios().get(i)).setHoraTrabalhada(((Engenheiro)funcionario).getHoraTrabalhada());
+                }
+                else if(funcionario.getClass() == new Arquiteto().getClass()){
+                    ((Arquiteto)bd.getFuncionarios().get(i)).setNome(((Arquiteto)funcionario).getNome());
+                    ((Arquiteto)bd.getFuncionarios().get(i)).setCodRegistro(((Arquiteto)funcionario).getCodRegistro());
+                    ((Arquiteto)bd.getFuncionarios().get(i)).setHoraTrabalhada(((Arquiteto)funcionario).getHoraTrabalhada());
+                }
+                else{
+                    ((FuncGerais)bd.getFuncionarios().get(i)).setNome(((FuncGerais)funcionario).getNome());
+                    ((FuncGerais)bd.getFuncionarios().get(i)).setCpf(((FuncGerais)funcionario).getCpf());
+                    ((FuncGerais)bd.getFuncionarios().get(i)).setHoraTrabalhada(((FuncGerais)funcionario).getHoraTrabalhada());
+                }
+               
                 aux = false;
             }
         }
@@ -180,7 +200,8 @@ public class ProjServico {
     
     public void atualizaProjeto(Cliente cliente, Projeto projeto) throws AtualizaException{
         cliente = consultaCliente(cliente);
-        if(getProjetoCliente(cliente, projeto)!= null){
+        projeto = getProjetoCliente(cliente, projeto);
+        if(projeto!= null){
             for(int i = 0; i < cliente.getProjetos().size(); i++){
                 if(cliente.getProjetos().get(i).equals(projeto)){
                     cliente.getProjetos().set(i, projeto);

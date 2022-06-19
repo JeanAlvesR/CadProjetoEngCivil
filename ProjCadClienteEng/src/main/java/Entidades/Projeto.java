@@ -44,7 +44,7 @@ public class Projeto {
     }
 
     public Double getGastoFuncionarios() {
-
+        gastoFuncionarios = 0.0;
         if(Objects.nonNull(funcionarios.get(0))){
             for (Funcionario funcionario: funcionarios
                  ) {

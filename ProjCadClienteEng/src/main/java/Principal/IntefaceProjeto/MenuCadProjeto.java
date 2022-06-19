@@ -557,6 +557,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        limpar();
         MenuProjetos.getMenuProjetos().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 

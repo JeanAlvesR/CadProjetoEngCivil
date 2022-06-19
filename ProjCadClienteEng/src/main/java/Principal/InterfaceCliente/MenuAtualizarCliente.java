@@ -230,9 +230,16 @@ public class MenuAtualizarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        limpar();
         MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
+    public void limpar(){
+        cxNomeCli.setText("");
+        cxEmailCli.setText("");
+        cxTelefoneCli.setText("");
+    }
+    
     public Cliente capturaDados() {
         Cliente cliente = new Cliente();
 

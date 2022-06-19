@@ -258,6 +258,7 @@ public class MenuAtualizarFuncionario extends javax.swing.JFrame {
                     break;
 
             }
+                      
             try {
                 Controlador.getControlador().getServico().atualizaFuncionario(funcAt);
                 return true;

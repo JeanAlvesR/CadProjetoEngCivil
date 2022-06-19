@@ -52,7 +52,7 @@ public class MenuListaProjetos extends javax.swing.JFrame {
         lbClientes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Menu de Projetos");
+        setTitle("Menu Lista de Projetos");
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setLocationByPlatform(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -243,7 +243,9 @@ public class MenuListaProjetos extends javax.swing.JFrame {
            MenuConsultaProjeto.getMenuConsultaProjeto().insereDadosProj(cliente, pj);
            MenuConsultaProjeto.getMenuConsultaProjeto().setVisible(true);
        }
-       
+        else{
+            JOptionPane.showMessageDialog(null, "Código Inválido!", "Error", 0);
+        }
     }//GEN-LAST:event_btConsultaActionPerformed
 
     private void btRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoveActionPerformed
