@@ -67,6 +67,11 @@ public class Projeto {
         funcionarios.add(func);
     }
 
+    public boolean removeFuncionario(Funcionario fc){
+        boolean aux = funcionarios.remove(fc);
+        return aux;
+    }
+    
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }

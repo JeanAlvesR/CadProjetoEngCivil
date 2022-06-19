@@ -2,26 +2,72 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Principal.IntefaceFuncionario;
+package Principal.IntefaceProjeto;
 
+import Controler.Controlador;
+import Entidades.Arquiteto;
+import Entidades.Cliente;
+import Entidades.Engenheiro;
+import Entidades.FuncGerais;
+import Entidades.Funcionario;
+import Entidades.Projeto;
+import Principal.IntefaceFuncionario.MenuListaFuncionarios;
 import Principal.IntefaceProjeto.MenuConsultaProjeto;
+import Servico.Exceptions.AtualizaException;
 import javax.swing.JOptionPane;
-
+import javax.swing.table.DefaultTableModel;
 
 public class MenuCadFuncionarioProj extends javax.swing.JFrame {
 
     private static MenuCadFuncionarioProj menuCadFuncionarioProj = null;
-    
+    private Cliente cliente = null;
+    private Projeto pj = null;
+
     private MenuCadFuncionarioProj() {
         initComponents();
     }
-    
-    public static MenuCadFuncionarioProj getMenuCadFuncionarioProj(){
-        if(menuCadFuncionarioProj == null ){
+
+    public static MenuCadFuncionarioProj getMenuCadFuncionarioProj() {
+        if (menuCadFuncionarioProj == null) {
             menuCadFuncionarioProj = new MenuCadFuncionarioProj();
         }
-    
+
         return menuCadFuncionarioProj;
+    }
+
+    public void insereDadosProj(Cliente cliente, Projeto pj) {
+        cxNomeCliente.setText(cliente.getNome());
+        cxCpfCliente.setText(cliente.getCpf());
+        cxNomeProj.setText(pj.getNome());
+        cxCod.setText(pj.getCodigoId());
+
+        this.cliente = cliente;
+        this.pj = pj;
+        listaTabela();
+    }
+
+    public void listaTabela() {
+
+        DefaultTableModel modelo = (DefaultTableModel) tbFuncProj.getModel();
+
+        int posLin = 0;
+
+        modelo.setRowCount(posLin);
+
+        //for alternativo  
+        for (Funcionario func : Controlador.getControlador().getServico().getProjetoCliente(cliente, pj).getFuncionarios()) {
+            if (func.getClass() == new Engenheiro().getClass()) {
+                modelo.insertRow(posLin, new Object[]{((Engenheiro) func).getNome(), ((Engenheiro) func).getCrea(), "Engenherio"});
+                posLin++;
+            } else if (func.getClass() == new Arquiteto().getClass()) {
+                modelo.insertRow(posLin, new Object[]{((Arquiteto) func).getNome(), ((Arquiteto) func).getCodRegistro(), "Arquiteto"});
+                posLin++;
+            } else {
+                modelo.insertRow(posLin, new Object[]{((FuncGerais) func).getNome(), ((FuncGerais) func).getCpf(), "Funcionário Geral"});
+                posLin++;
+            }
+        }
+
     }
 
     /**
@@ -34,7 +80,7 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        lbConsulta = new javax.swing.JLabel();
+        lbCadFuncionários = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lbNomeProj = new javax.swing.JLabel();
         lbCpf = new javax.swing.JLabel();
@@ -47,10 +93,12 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
         btRemoverFunc = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
         btSairMenuConsultaCliente = new javax.swing.JButton();
-        opcFunc = new javax.swing.JComboBox<>();
         cxNomeProj = new javax.swing.JLabel();
         cxCod = new javax.swing.JLabel();
         lbCod1 = new javax.swing.JLabel();
+        opcFunc = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbFuncProj = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Cadastro Funcionário");
@@ -67,24 +115,24 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
-        lbConsulta.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
-        lbConsulta.setForeground(new java.awt.Color(255, 255, 255));
-        lbConsulta.setText("Consulta Funcionário");
+        lbCadFuncionários.setFont(new java.awt.Font("Nimbus Mono PS", 1, 24)); // NOI18N
+        lbCadFuncionários.setForeground(new java.awt.Color(255, 255, 255));
+        lbCadFuncionários.setText("Cadastro Funcionários no Projeto");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(lbConsulta)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbCadFuncionários)
+                .addGap(35, 35, 35))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(lbConsulta)
+                .addComponent(lbCadFuncionários)
                 .addContainerGap())
         );
 
@@ -163,13 +211,6 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
             }
         });
 
-        opcFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Engenheiro", "Arquiteto", "Funcionário Geral" }));
-        opcFunc.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                opcFuncItemStateChanged(evt);
-            }
-        });
-
         cxNomeProj.setForeground(new java.awt.Color(255, 255, 255));
         cxNomeProj.setText("...");
 
@@ -179,55 +220,78 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
         lbCod1.setForeground(new java.awt.Color(255, 255, 255));
         lbCod1.setText("Código");
 
+        opcFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Engenheiro", "Arquiteto", "Funcionário Geral" }));
+        opcFunc.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                opcFuncItemStateChanged(evt);
+            }
+        });
+        opcFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcFuncActionPerformed(evt);
+            }
+        });
+
+        tbFuncProj.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Identificador", "Cargo"
+            }
+        ));
+        jScrollPane1.setViewportView(tbFuncProj);
+        if (tbFuncProj.getColumnModel().getColumnCount() > 0) {
+            tbFuncProj.getColumnModel().getColumn(2).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(lbNomeProj)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(lbNomeCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(cxNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lbCpf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cxCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(cxNomeProj, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lbCod1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btListar)
-                                    .addComponent(cxCod, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(opcFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(302, 302, 302)
-                                .addComponent(btLimpar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btSairMenuConsultaCliente))
-                            .addComponent(cxCodIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(93, 93, 93)
                 .addComponent(btAddFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btRemoverFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbNomeProj)
+                                    .addComponent(lbNomeCliente))
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cxNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cxNomeProj, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbCpf)
+                                    .addComponent(lbCod1))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cxCod, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cxCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(opcFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(cxCodIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(btLimpar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btSairMenuConsultaCliente))
+                                    .addComponent(btListar))))
+                        .addGap(15, 15, 15))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,19 +308,21 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
                     .addComponent(cxNomeProj)
                     .addComponent(lbCod1)
                     .addComponent(cxCod))
-                .addGap(81, 81, 81)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cxCodIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(opcFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btListar))
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAddFunc)
-                    .addComponent(btRemoverFunc))
-                .addGap(122, 122, 122)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btLimpar)
-                    .addComponent(btSairMenuConsultaCliente))
+                    .addComponent(btRemoverFunc)
+                    .addComponent(btAddFunc))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSairMenuConsultaCliente)
+                    .addComponent(btLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -295,13 +361,95 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
     }//GEN-LAST:event_btListarActionPerformed
 
     private void btAddFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddFuncActionPerformed
-        
+        cadastrarFunc();
     }//GEN-LAST:event_btAddFuncActionPerformed
 
-    private void btRemoverFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverFuncActionPerformed
+    public Funcionario confereFuncionario() {
+        if (cxCodIdentificador.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Erro de cadastro! Verifique o código ID.", "Error", 0);
+            cxCodIdentificador.requestFocus();
+            return null;
+        }
+
+        Funcionario func = null;
+        switch ((String) opcFunc.getSelectedItem()) {
+
+            case "Engenheiro":
+                Engenheiro eng = new Engenheiro();
+                eng.setCrea(cxCodIdentificador.getText());
+                func = eng;
+                break;
+
+            case "Arquiteto":
+                Arquiteto arq = new Arquiteto();
+                arq.setCodRegistro(cxCodIdentificador.getText());
+                func = arq;
+                break;
+
+            case "Funcionário Geral":
+                FuncGerais fg = new FuncGerais();
+                fg.setCpf(cxCodIdentificador.getText());
+                func = fg;
+                break;
+        }
         
+        func = Controlador.getControlador().getServico().consultaFuncionario(func);
+
+        return func;
+    }
+
+    public boolean cadastrarFunc() {
+        
+        Funcionario func = confereFuncionario();
+                
+        if (func != null) {
+            pj.addFuncionario(func);
+
+            try {
+                Controlador.getControlador().getServico().atualizaProjeto(cliente, pj);
+            } catch (AtualizaException ae) {
+                JOptionPane.showMessageDialog(null, "Erro de cadastro! Atualiza Exception.", "Error", 0);
+                return false;
+            }
+            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+            listaTabela();
+            limpar();
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro de cadastro! Verifique o código ID.", "Error", 0);
+            cxCodIdentificador.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    public void limpar() {
+        cxCodIdentificador.setText("Digite o ID");
+
+    }
+
+    private void btRemoverFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverFuncActionPerformed
+        removeFunc();
     }//GEN-LAST:event_btRemoverFuncActionPerformed
 
+    public boolean removeFunc(){
+        Funcionario func = confereFuncionario();
+    if(func!=null){
+        boolean aux = Controlador.getControlador().getServico().getProjetoCliente(cliente, pj).removeFuncionario(func);
+        if(!aux){
+            JOptionPane.showMessageDialog(null, "Erro de Remoção!.", "Error", 0);
+            return false;
+        }
+        JOptionPane.showMessageDialog(null, "Removido com sucesso!.", "Removido", 1);
+        listaTabela();
+        limpar();
+    }
+    else{
+        JOptionPane.showMessageDialog(null, "Erro de Remoção!.", "Error", 0);
+        return false;
+    }
+       return true; 
+    }
+    
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         //limpar();
     }//GEN-LAST:event_btLimparActionPerformed
@@ -312,29 +460,17 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
             sair();
         }
     }//GEN-LAST:event_btSairMenuConsultaClienteActionPerformed
-    public void sair(){
-        this.dispose();
-    }
-    
-    
-    
+
     private void opcFuncItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_opcFuncItemStateChanged
 
-        switch ((String) opcFunc.getSelectedItem()) {
-
-            case "Engenheiro":
-            lbCpf.setText("CREA:");
-            break;
-
-            case "Arquiteto":
-            lbCpf.setText("Código Registro:");
-            break;
-
-            case "Funcionário Geral":
-            lbCpf.setText("CPF:");
-            break;
-        }
     }//GEN-LAST:event_opcFuncItemStateChanged
+
+    private void opcFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcFuncActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcFuncActionPerformed
+    public void sair() {
+        this.dispose();
+    }
 
     /**
      * @param args the command line arguments
@@ -384,11 +520,13 @@ public class MenuCadFuncionarioProj extends javax.swing.JFrame {
     private javax.swing.JLabel cxNomeProj;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbCadFuncionários;
     private javax.swing.JLabel lbCod1;
-    private javax.swing.JLabel lbConsulta;
     private javax.swing.JLabel lbCpf;
     private javax.swing.JLabel lbNomeCliente;
     private javax.swing.JLabel lbNomeProj;
     private javax.swing.JComboBox<String> opcFunc;
+    private javax.swing.JTable tbFuncProj;
     // End of variables declaration//GEN-END:variables
 }

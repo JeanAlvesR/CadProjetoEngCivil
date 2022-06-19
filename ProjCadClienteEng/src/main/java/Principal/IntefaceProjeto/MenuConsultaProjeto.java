@@ -8,14 +8,14 @@ import Entidades.Cliente;
 import Entidades.DetalhesProjeto;
 import Entidades.Endereco;
 import Entidades.Projeto;
-import Principal.IntefaceFuncionario.MenuCadFuncionarioProj;
 import javax.swing.JOptionPane;
 
 
 public class MenuConsultaProjeto extends javax.swing.JFrame {
 
     private static MenuConsultaProjeto menuConsultaProjeto = null;
-    
+    private Cliente cliente = null;
+    private Projeto projeto = null;
     private MenuConsultaProjeto() {
         initComponents();
     }
@@ -46,6 +46,9 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         cxBairro.setText(pj.getDetalhesProjeto().getEndereco().getBairro());
         cxCep.setText(pj.getDetalhesProjeto().getEndereco().getBairro());
         cxCidade.setText(pj.getDetalhesProjeto().getEndereco().getCidade());
+        
+        this.cliente = cliente;
+        this.projeto = pj;
     }
     
     public Cliente capturaCliente(){
@@ -530,6 +533,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionariosActionPerformed
+        MenuCadFuncionarioProj.getMenuCadFuncionarioProj().insereDadosProj(cliente, projeto);
         MenuCadFuncionarioProj.getMenuCadFuncionarioProj().setVisible(true);
     }//GEN-LAST:event_btFuncionariosActionPerformed
 

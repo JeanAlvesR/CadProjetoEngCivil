@@ -127,7 +127,6 @@ public class ProjServico {
         
         cliente = consultaCliente(cliente);
         if(cliente!= null){
-            System.out.println("Dentro do getProjetos");
             return cliente.getProjetos();
         }
         return null;
@@ -152,7 +151,6 @@ public class ProjServico {
         cliente = consultaCliente(cliente);
         if(cliente!= null){
             if(getProjetoCliente(cliente, projeto)==null){
-                System.out.println("Passei por aqui");
                 cliente.addProjeto(projeto);
             }
             else{
