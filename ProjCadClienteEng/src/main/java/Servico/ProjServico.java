@@ -136,8 +136,11 @@ public class ProjServico {
     public Projeto getProjetoCliente(Cliente cliente, Projeto projeto){
         cliente = consultaCliente(cliente);
         if(cliente!= null){
-            List<Projeto> proj = cliente.getProjetos().stream().filter(x -> x.getCodigoId() == projeto.getCodigoId()).collect(Collectors.toList());
-            return proj.get(0);
+            for(Projeto proj : cliente.getProjetos()){
+                if(projeto.getCodigoId() == null ? proj.getCodigoId() == null : projeto.getCodigoId().equals(proj.getCodigoId())){
+                    return proj;
+                }
+            }
         }
         return null;
     }

@@ -217,7 +217,10 @@ public class MenuProjetos extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarActionPerformed
 
     private void btCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadActionPerformed
-        
+        Cliente cliente = new Cliente();
+        cliente.setCpf(cxCpf.getText());
+        MenuCadProjeto.getMenuCadProjeto().insereDadosCliente(cliente);
+        MenuCadProjeto.getMenuCadProjeto().setVisible(true);
     }//GEN-LAST:event_btCadActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
