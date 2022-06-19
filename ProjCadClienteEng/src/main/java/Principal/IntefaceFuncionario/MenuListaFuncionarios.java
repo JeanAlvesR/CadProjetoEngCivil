@@ -124,9 +124,11 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbFunc);
 
+        jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ARQUITETOS");
 
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("FUNCIONÁRIOS GERAIS");
 
@@ -194,11 +196,16 @@ public class MenuListaFuncionarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btSairMenuFuncActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        MenuFuncionario.getMenuFuncionario().setVisible(false);
+        listaTabelas();
+        if(MenuFuncionario.getMenuFuncionario().isVisible()){
+            MenuFuncionario.getMenuFuncionario().setVisible(false);
+        }
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        MenuFuncionario.getMenuFuncionario().setVisible(true);
+        if(!MenuCadFuncionarioProj.getMenuCadFuncionarioProj().isVisible()){
+            MenuFuncionario.getMenuFuncionario().setVisible(true);
+        }
     }//GEN-LAST:event_formWindowClosed
 
     public void sair() {

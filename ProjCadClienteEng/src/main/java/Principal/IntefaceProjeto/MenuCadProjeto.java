@@ -13,7 +13,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
 
     private static MenuCadProjeto menuCadProjeto = null;
 
-    public MenuCadProjeto() {
+    private MenuCadProjeto() {
         initComponents();
     }
 
@@ -528,7 +528,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
             dp.setInclinacao(Float.parseFloat(cxInclinacao.getText()));
             dp.setTipoSolo((cxTipoSolo.getText()));
         }catch(NumberFormatException nfe){
-            JOptionPane.showConfirmDialog(null, "O comprimento, inclinação e largura precisam ser números e separados por ponto!","Error",0);
+            JOptionPane.showMessageDialog(null, "O comprimento, inclinação e largura precisam ser números e separados por ponto!","Error",0);
             return false;
         }
 
@@ -546,7 +546,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
             Controlador.getControlador().getServico().cadProjeto(cliente, projeto);
             limpar();
         }catch(CadException ce){
-            JOptionPane.showConfirmDialog(null, "Erro no cadastro!","Error",0);
+            JOptionPane.showMessageDialog(null, "Erro no cadastro!","Error",0);
             return false;
         }
         return true;

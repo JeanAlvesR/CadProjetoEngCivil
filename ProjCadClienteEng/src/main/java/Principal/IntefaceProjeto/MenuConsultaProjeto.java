@@ -8,6 +8,7 @@ import Entidades.Cliente;
 import Entidades.DetalhesProjeto;
 import Entidades.Endereco;
 import Entidades.Projeto;
+import Principal.IntefaceFuncionario.MenuCadFuncionarioProj;
 import javax.swing.JOptionPane;
 
 
@@ -130,6 +131,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         cxBairro = new javax.swing.JLabel();
         cxCep = new javax.swing.JLabel();
         cxCidade = new javax.swing.JLabel();
+        btFuncionarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Consulta Projeto");
@@ -313,6 +315,16 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         cxCidade.setForeground(new java.awt.Color(255, 255, 255));
         cxCidade.setText("...");
 
+        btFuncionarios.setBackground(new java.awt.Color(102, 102, 102));
+        btFuncionarios.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        btFuncionarios.setText("Funcionários");
+        btFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFuncionariosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -380,6 +392,8 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btFuncionarios)
+                .addGap(18, 18, 18)
                 .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btSairMenuConsultaCliente)
@@ -454,8 +468,9 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSairMenuConsultaCliente)
-                    .addComponent(btEditar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btEditar)
+                    .addComponent(btFuncionarios))
+                .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(15, 15, 15)
@@ -514,6 +529,10 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
         MenuListaProjetos.getMenuListaProjetos().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
+    private void btFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionariosActionPerformed
+        MenuCadFuncionarioProj.getMenuCadFuncionarioProj().setVisible(true);
+    }//GEN-LAST:event_btFuncionariosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -551,6 +570,7 @@ public class MenuConsultaProjeto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
+    private javax.swing.JButton btFuncionarios;
     private javax.swing.JButton btSairMenuConsultaCliente;
     private javax.swing.JLabel cxArea;
     private javax.swing.JLabel cxBairro;
