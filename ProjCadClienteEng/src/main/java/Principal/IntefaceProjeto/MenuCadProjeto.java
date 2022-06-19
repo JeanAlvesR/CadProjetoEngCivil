@@ -1,3 +1,4 @@
+
 package Principal.IntefaceProjeto;
 
 import Controler.Controlador;
@@ -467,7 +468,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
     if( cadastrar()){
-        JOptionPane.showConfirmDialog(null, "Cadastrado!", "Cadastro", 1);
+        JOptionPane.showMessageDialog(null, "Cadastro Concluído!", "Cadastrado", 1);
     }
 
     }//GEN-LAST:event_btCadastrarActionPerformed
@@ -506,7 +507,7 @@ public class MenuCadProjeto extends javax.swing.JFrame {
     public boolean cadastrar() {
 
         if (cxCodigoProj.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "O código precisa existir!", "ERROR", 0);
+            JOptionPane.showConfirmDialog(null, "O código precisa existir!", "ERROR", 0);
             cxCodigoProj.requestFocus();
             return false;
         }

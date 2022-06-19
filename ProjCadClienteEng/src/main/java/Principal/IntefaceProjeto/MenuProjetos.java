@@ -34,10 +34,9 @@ public class MenuProjetos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btConsultar = new javax.swing.JButton();
         btCad = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
-        btListaClientes = new javax.swing.JButton();
+        btLista = new javax.swing.JButton();
         lbCliente = new javax.swing.JLabel();
         lbCPF = new javax.swing.JLabel();
         cxNome = new javax.swing.JLabel();
@@ -60,16 +59,6 @@ public class MenuProjetos extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        btConsultar.setBackground(new java.awt.Color(102, 102, 102));
-        btConsultar.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btConsultar.setText("Consultar");
-        btConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btConsultarActionPerformed(evt);
-            }
-        });
-
         btCad.setBackground(new java.awt.Color(102, 102, 102));
         btCad.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
         btCad.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,13 +79,13 @@ public class MenuProjetos extends javax.swing.JFrame {
             }
         });
 
-        btListaClientes.setBackground(new java.awt.Color(102, 102, 102));
-        btListaClientes.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
-        btListaClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btListaClientes.setText("Listar Clientes");
-        btListaClientes.addActionListener(new java.awt.event.ActionListener() {
+        btLista.setBackground(new java.awt.Color(102, 102, 102));
+        btLista.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        btLista.setForeground(new java.awt.Color(255, 255, 255));
+        btLista.setText("Lista de Projetos");
+        btLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btListaClientesActionPerformed(evt);
+                btListaActionPerformed(evt);
             }
         });
 
@@ -123,9 +112,8 @@ public class MenuProjetos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btCad, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                    .addComponent(btConsultar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btListaClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btLista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addComponent(btSair)
                 .addContainerGap())
@@ -152,10 +140,8 @@ public class MenuProjetos extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(btCad)
                 .addGap(18, 18, 18)
-                .addComponent(btConsultar)
-                .addGap(18, 18, 18)
-                .addComponent(btListaClientes)
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addComponent(btLista)
+                .addGap(0, 49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btSair)
@@ -173,16 +159,16 @@ public class MenuProjetos extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
+                .addGap(131, 131, 131)
                 .addComponent(lbClientes)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbClientes)
-                .addGap(16, 16, 16))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,7 +184,7 @@ public class MenuProjetos extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -212,12 +198,9 @@ public class MenuProjetos extends javax.swing.JFrame {
         MenuConsultaCliente.getMenuConsultaCliente().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
-        
-    }//GEN-LAST:event_btConsultarActionPerformed
-
     private void btCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadActionPerformed
         Cliente cliente = new Cliente();
+        cliente.setNome(cxNome.getText());
         cliente.setCpf(cxCpf.getText());
         MenuCadProjeto.getMenuCadProjeto().insereDadosCliente(cliente);
         MenuCadProjeto.getMenuCadProjeto().setVisible(true);
@@ -234,11 +217,14 @@ public class MenuProjetos extends javax.swing.JFrame {
         this.dispose();
     }
     
-    private void btListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaClientesActionPerformed
-
-        //MenuListaClientes.getListaClientes().setVisible(true);
-        //MenuListaClientes.getListaClientes().listaTabela();
-    }//GEN-LAST:event_btListaClientesActionPerformed
+    private void btListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListaActionPerformed
+        Cliente cliente = new Cliente();
+        cliente.setNome(cxNome.getText());
+        cliente.setCpf(cxCpf.getText());       
+        MenuListaProjetos.getMenuListaProjetos().insereDadosCliente(cliente);
+        MenuListaProjetos.getMenuListaProjetos().listaTabela();
+        MenuListaProjetos.getMenuListaProjetos().setVisible(true);
+    }//GEN-LAST:event_btListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,8 +263,7 @@ public class MenuProjetos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCad;
-    private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btListaClientes;
+    private javax.swing.JButton btLista;
     private javax.swing.JButton btSair;
     private javax.swing.JLabel cxCpf;
     private javax.swing.JLabel cxNome;

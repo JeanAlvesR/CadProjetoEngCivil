@@ -1,13 +1,14 @@
+
 package Entidades;
 
 import java.util.Objects;
 
 public class DetalhesProjeto {
-    private float comprimento;
-    private float largura;
-    private float inclinacao;
+    private Float comprimento;
+    private Float largura;
+    private Float inclinacao;
     private String tipoSolo;
-    private float areaTotal;
+    private Float areaTotal;
     private Endereco endereco;
 
     public DetalhesProjeto(){
@@ -19,7 +20,7 @@ public class DetalhesProjeto {
         endereco = new Endereco();
     }
 
-    public DetalhesProjeto(float comprimento, float largura, float inclinacao, String tipoSolo, Endereco endereco) {
+    public DetalhesProjeto(Float comprimento, Float largura, Float inclinacao, String tipoSolo, Endereco endereco) {
         this.comprimento = comprimento;
         this.largura = largura;
         this.inclinacao = inclinacao;
@@ -28,27 +29,27 @@ public class DetalhesProjeto {
         this.endereco = endereco;
     }
 
-    public float getComprimento() {
+    public Float getComprimento() {
         return comprimento;
     }
 
-    public void setComprimento(float comprimento) {
+    public void setComprimento(Float comprimento) {
         this.comprimento = comprimento;
     }
 
-    public float getLargura() {
+    public Float getLargura() {
         return largura;
     }
 
-    public void setLargura(float largura) {
+    public void setLargura(Float largura) {
         this.largura = largura;
     }
 
-    public float getInclinacao() {
+    public Float getInclinacao() {
         return inclinacao;
     }
 
-    public void setInclinacao(float inclinacao) {
+    public void setInclinacao(Float inclinacao) {
         this.inclinacao = inclinacao;
     }
 
@@ -60,11 +61,11 @@ public class DetalhesProjeto {
         this.tipoSolo = tipoSolo;
     }
 
-    public float getAreaTotal() {
+    public Float getAreaTotal() {
         return areaTotal;
     }
 
-    public void setAreaTotal(float areaTotal) {
+    public void setAreaTotal(Float areaTotal) {
         this.areaTotal = areaTotal;
     }
 

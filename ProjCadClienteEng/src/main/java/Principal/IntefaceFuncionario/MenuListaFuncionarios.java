@@ -1,8 +1,8 @@
+
 package Principal.IntefaceFuncionario;
 
 import Controler.Controlador;
 import Entidades.Arquiteto;
-import Entidades.Cliente;
 import Entidades.Engenheiro;
 import Entidades.FuncGerais;
 import Entidades.Funcionario;

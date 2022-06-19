@@ -1,3 +1,4 @@
+
 package Servico;
 
 import BD.BdAplicacao;
@@ -9,7 +10,6 @@ import Servico.Exceptions.CadException;
 import Servico.Exceptions.RemoveException;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ProjServico {
 
@@ -128,6 +128,7 @@ public class ProjServico {
         
         cliente = consultaCliente(cliente);
         if(cliente!= null){
+            System.out.println("Dentro do getProjetos");
             return cliente.getProjetos();
         }
         return null;
@@ -136,8 +137,11 @@ public class ProjServico {
     public Projeto getProjetoCliente(Cliente cliente, Projeto projeto){
         cliente = consultaCliente(cliente);
         if(cliente!= null){
+            if(cliente.getProjetos() == null){
+                return null;
+            }
             for(Projeto proj : cliente.getProjetos()){
-                if(projeto.getCodigoId() == null ? proj.getCodigoId() == null : projeto.getCodigoId().equals(proj.getCodigoId())){
+                if(projeto.getCodigoId().equals(proj.getCodigoId())){
                     return proj;
                 }
             }
@@ -149,6 +153,7 @@ public class ProjServico {
         cliente = consultaCliente(cliente);
         if(cliente!= null){
             if(getProjetoCliente(cliente, projeto)==null){
+                System.out.println("Passei por aqui");
                 cliente.addProjeto(projeto);
             }
             else{
@@ -163,7 +168,8 @@ public class ProjServico {
     public void removeProjeto(Cliente cliente, Projeto projeto) throws RemoveException{
         cliente = consultaCliente(cliente);
         if(cliente!= null){
-            if(getProjetoCliente(cliente, projeto)!=null){
+            projeto = getProjetoCliente(cliente, projeto);
+            if(projeto!=null){
                 cliente.getProjetos().remove(projeto);
             }
             else{
